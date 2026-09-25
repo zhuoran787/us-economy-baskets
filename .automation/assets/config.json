@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "selection_date": "2026-09-24",
   "output_dir": ".build",
   "history_start": "2024-03-27",
@@ -352,5 +352,2429 @@
       "timezone": "America/New_York",
       "label": "纽约时间每个工作日17:30（收盘后）"
     }
-  }
+  },
+  "regional_markets": {
+    "XSES": {
+      "calendar": "XSES"
+    },
+    "XPAR": {
+      "calendar": "XPAR"
+    },
+    "XIDX": {
+      "calendar": "XIDX",
+      "extra_closed": [
+        "2025-08-18",
+        "2026-01-16",
+        "2026-02-16",
+        "2026-03-18",
+        "2026-03-19",
+        "2026-03-20",
+        "2026-03-23",
+        "2026-03-24",
+        "2026-05-15",
+        "2026-05-27",
+        "2026-05-28",
+        "2026-06-16",
+        "2026-08-25",
+        "2026-12-24"
+      ],
+      "sources": [
+        "https://www.idx.co.id/id/tentang-bei/jadwal-libur-bursa",
+        "https://www.idxcarbon.co.id/document/share/143/cf878b0d-87c1-45e2-98a5-4c54d6efc8c2",
+        "https://id.scribd.com/document/1012423695/Peng-00171-Libur-Bursa-2026-No-Peng-00171BEI-POP09-2025",
+        "https://web.ksei.co.id/files/1767843003_Penyesuaian_Pengumuman_Hari_Libur_dan_Cuti_Bersama_PT_KSEI_Ta....pdf"
+      ]
+    },
+    "XWBO": {
+      "calendar": "XWBO"
+    },
+    "XKLS": {
+      "calendar": "XKLS",
+      "extra_closed": [
+        "2024-03-28",
+        "2025-09-15",
+        "2026-03-20",
+        "2026-03-23",
+        "2026-06-02",
+        "2026-06-17",
+        "2026-08-25",
+        "2026-06-01",
+        "2026-11-09"
+      ],
+      "extra_open": [
+        "2024-03-27",
+        "2026-03-06",
+        "2026-06-16"
+      ],
+      "sources": [
+        "https://www.linkedin.com/posts/bursamalaysia_bursa-malaysia-berhad-and-its-subsidiaries-activity-7178359756401651712-bKfx",
+        "https://www.kabinet.gov.my/akta-dan-warta/",
+        "https://osc.ppj.gov.my/announcement/74",
+        "https://www.phillip.com.my/wp-content/uploads/2026/03/TP_Circular_-_122026_CLOSURE_OF_THE_EXCHANGE_FOR_HARI_RAYA_AIDILFITRI_HOLIDAYS_2026.pdf",
+        "https://www.phillip.com.my/announcement/closure-of-bursa-malaysia-in-conjunction-with-wesak-day-and-official-birthday-of-his-majesty-the-yang-di-pertuan-agong-holidays-2026/"
+      ]
+    },
+    "XAMS": {
+      "calendar": "XAMS"
+    },
+    "XMIL": {
+      "calendar": "XMIL"
+    },
+    "XSWX": {
+      "calendar": "XSWX"
+    },
+    "XSTO": {
+      "calendar": "XSTO"
+    },
+    "XETR": {
+      "calendar": "XETR"
+    },
+    "XTKS": {
+      "calendar": "XTKS"
+    },
+    "XBKK": {
+      "calendar": "XBKK"
+    },
+    "XDUB": {
+      "calendar": "XDUB"
+    },
+    "XBRU": {
+      "calendar": "XBRU"
+    },
+    "XLON": {
+      "calendar": "XLON"
+    },
+    "XMAD": {
+      "calendar": "XMAD"
+    },
+    "XLIS": {
+      "calendar": "XLIS"
+    },
+    "XCSE": {
+      "calendar": "XCSE"
+    },
+    "XHEL": {
+      "calendar": "XHEL"
+    },
+    "US": {
+      "calendar": "XNYS"
+    },
+    "VN": {
+      "calendar": "explicit_weekdays",
+      "valid_through": "2026-12-31",
+      "extra_closed": [
+        "2024-04-18",
+        "2024-04-29",
+        "2024-04-30",
+        "2024-05-01",
+        "2024-09-02",
+        "2024-09-03",
+        "2025-01-01",
+        "2025-01-27",
+        "2025-01-28",
+        "2025-01-29",
+        "2025-01-30",
+        "2025-01-31",
+        "2025-04-07",
+        "2025-04-30",
+        "2025-05-01",
+        "2025-05-02",
+        "2025-09-01",
+        "2025-09-02",
+        "2026-01-01",
+        "2026-01-02",
+        "2026-02-16",
+        "2026-02-17",
+        "2026-02-18",
+        "2026-02-19",
+        "2026-02-20",
+        "2026-04-27",
+        "2026-04-30",
+        "2026-05-01",
+        "2026-08-31",
+        "2026-09-01",
+        "2026-09-02"
+      ],
+      "sources": [
+        "https://hnx.vn/en-gb/chi-tiet-lich-nghi-gd-60017882.html?_page=1",
+        "https://www.vietcap.com.vn/en/news/notice-holiday-liberation-and-international-labor-day",
+        "https://hnx.vn/en-gb/ket-qua-tim-kiem/chi-tiet-tin-60020153-0.html",
+        "https://staticfile.hsx.vn/Uploads/UploadDocuments/2428610/20251209%20-%20HOSE%20-%20Notice%20of%20trading%20holiday%20schedule%20for%202026%20-%20PV.pdf"
+      ]
+    }
+  },
+  "regional_selection": {
+    "review_date": "2026-09-25",
+    "minimum_market_cap_usd_at_selection": 500000000,
+    "method": "各股本币复权日收益等权；不按国家等权、不按市值加权；不作跨币种价格直接平均",
+    "limitations": "不是GDP权重分解；上市公司海外收入、经营汇率敏感性和个股事件仍会影响收益。未披露的AI最终需求及逐业务利润占比不作零暴露认证。",
+    "calendar_maintenance": "越南显式日历仅核验至2026年底，后续年份须依据交易所公告延长，未核验则停止刷新并保留旧站。"
+  },
+  "regions": [
+    {
+      "id": "europe",
+      "name": "欧洲",
+      "note": "欧洲含英国、瑞士。传统工业含全球出口业务，住宅篮子偏英国开发商及欧洲住宅材料。金融含地区银行与全球私募资管。",
+      "stocks": [
+        {
+          "ticker": "BT-A.L",
+          "group": "services",
+          "name": "英国电信",
+          "business": "宽带、移动通信、Openreach接入网络",
+          "limitations": "英国需求为主；企业IT含少量云服务",
+          "sources": [
+            "https://www.bt.com/bt-plc/assets/documents/investors/financial-reporting-and-news/annual-reports/2025/2025-bt-group-plc-annual-report.pdf"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "bt-a.l",
+          "selection_market_cap_usd": 25513191640,
+          "selection_market_cap_time": "2026-09-25T08:47:20+00:00",
+          "selection_average_turnover_usd": 37043214
+        },
+        {
+          "ticker": "ORA.PA",
+          "group": "services",
+          "name": "Orange",
+          "business": "法国及欧洲通信订阅、网络服务",
+          "limitations": "非洲和中东业务亦重要，并非纯欧洲需求",
+          "sources": [
+            "https://investisseurs-individuels.orange.com/en/financial_indicators"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Paris",
+          "market": "XPAR",
+          "stooq": "ora.pa",
+          "selection_market_cap_usd": 42569822637,
+          "selection_market_cap_time": "2026-09-25T08:47:03+00:00",
+          "selection_average_turnover_usd": 79276717
+        },
+        {
+          "ticker": "TELIA.ST",
+          "group": "services",
+          "name": "Telia",
+          "business": "北欧与波罗的海地区通信服务",
+          "limitations": "受当地电信竞争及监管影响",
+          "sources": [
+            "https://www.teliacompany.com/en"
+          ],
+          "currency": "SEK",
+          "timezone": "Europe/Stockholm",
+          "market": "XSTO",
+          "stooq": "telia.st",
+          "selection_market_cap_usd": 18219354880,
+          "selection_market_cap_time": "2026-09-25T09:01:50+00:00",
+          "selection_average_turnover_usd": 27867318
+        },
+        {
+          "ticker": "TEL2-B.ST",
+          "group": "services",
+          "name": "Tele2",
+          "business": "瑞典及波罗的海移动通信、宽带",
+          "limitations": "企业通信占一部分，不是纯居民消费",
+          "sources": [
+            "https://www.tele2.com/investors/annual-report-2025/"
+          ],
+          "currency": "SEK",
+          "timezone": "Europe/Stockholm",
+          "market": "XSTO",
+          "stooq": "tel2-b.st",
+          "selection_market_cap_usd": 11821162364,
+          "selection_market_cap_time": "2026-09-25T09:02:11+00:00",
+          "selection_average_turnover_usd": 42526844
+        },
+        {
+          "ticker": "WTB.L",
+          "group": "services",
+          "name": "Whitbread",
+          "business": "Premier Inn酒店住宿及配套餐饮",
+          "limitations": "英国为主，德国扩张影响利润",
+          "sources": [
+            "https://www.whitbread.co.uk/investors/annual-report/"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "wtb.l",
+          "selection_market_cap_usd": 5194963431,
+          "selection_market_cap_time": "2026-09-25T08:45:30+00:00",
+          "selection_average_turnover_usd": 18588189
+        },
+        {
+          "ticker": "RYA.IR",
+          "group": "services",
+          "name": "瑞安航空",
+          "business": "欧洲短途客运及附加收费",
+          "limitations": "旅游、油价与运力共同影响利润",
+          "sources": [
+            "https://investor.ryanair.com/results-centre/"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Dublin",
+          "market": "XDUB",
+          "stooq": "rya.ir",
+          "selection_market_cap_usd": 27291402265,
+          "selection_market_cap_time": "2026-09-25T08:32:04+00:00",
+          "selection_average_turnover_usd": 50352567
+        },
+        {
+          "ticker": "EZJ.L",
+          "group": "services",
+          "name": "易捷航空",
+          "business": "欧洲航空客运与度假套餐",
+          "limitations": "燃油及飞机供给影响利润",
+          "sources": [
+            "https://www.easyjet.com/en/news/pt/story/easyjet-apresenta-resultados-de-2025"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "ezj.l",
+          "selection_market_cap_usd": 6657519012,
+          "selection_market_cap_time": "2026-09-25T08:46:09+00:00",
+          "selection_average_turnover_usd": 64206829
+        },
+        {
+          "ticker": "AENA.MC",
+          "group": "services",
+          "name": "Aena机场",
+          "business": "机场航空收费、零售及商业租赁",
+          "limitations": "西班牙为主，也有英国、巴西机场",
+          "sources": [
+            "https://www.aena.es/en/press/aena-earns-a-net-profit-of-eur-2136.7-million-in-2025.html"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Madrid",
+          "market": "XMAD",
+          "stooq": "aena.mc",
+          "selection_market_cap_usd": 44478633275,
+          "selection_market_cap_time": "2026-09-25T08:47:08+00:00",
+          "selection_average_turnover_usd": 37776354
+        },
+        {
+          "ticker": "TSCO.L",
+          "group": "goods",
+          "name": "Tesco",
+          "business": "超市食品与日用品零售",
+          "limitations": "英国为主，兼有爱尔兰、中欧",
+          "sources": [
+            "https://www.tescoplc.com/preliminary-results-202425/"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "tsco.l",
+          "selection_market_cap_usd": 39139782188,
+          "selection_market_cap_time": "2026-09-25T08:47:21+00:00",
+          "selection_average_turnover_usd": 93930454
+        },
+        {
+          "ticker": "SBRY.L",
+          "group": "goods",
+          "name": "Sainsbury's",
+          "business": "英国食品零售、Argos百货",
+          "limitations": "食品和耐用品需求混合",
+          "sources": [
+            "https://www.about.sainsburys.co.uk/"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "sbry.l",
+          "selection_market_cap_usd": 9727558359,
+          "selection_market_cap_time": "2026-09-25T08:46:48+00:00",
+          "selection_average_turnover_usd": 39563129
+        },
+        {
+          "ticker": "MKS.L",
+          "group": "goods",
+          "name": "Marks & Spencer",
+          "business": "英国食品、服饰和家居零售",
+          "limitations": "个别年度受网络攻击等公司事件影响",
+          "sources": [
+            "https://corporate.marksandspencer.com/newsroom/press-releases/full-year-results-52-weeks-ended-28-march-2026"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "mks.l",
+          "selection_market_cap_usd": 10312668022,
+          "selection_market_cap_time": "2026-09-25T08:47:18+00:00",
+          "selection_average_turnover_usd": 38671229
+        },
+        {
+          "ticker": "CA.PA",
+          "group": "goods",
+          "name": "家乐福",
+          "business": "超市及大卖场零售",
+          "limitations": "欧洲以外巴西业务占重要地位",
+          "sources": [
+            "https://www.carrefour.com/sites/default/files/2026-03/CFR2025_URD_EN_PDF_MEL_270326_4.pdf"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Paris",
+          "market": "XPAR",
+          "stooq": "ca.pa",
+          "selection_market_cap_usd": 13055565571,
+          "selection_market_cap_time": "2026-09-25T08:46:12+00:00",
+          "selection_average_turnover_usd": 36197020
+        },
+        {
+          "ticker": "JMT.LS",
+          "group": "goods",
+          "name": "Jeronimo Martins",
+          "business": "波兰Biedronka、葡萄牙食品零售",
+          "limitations": "还有哥伦比亚业务",
+          "sources": [
+            "https://reports.jeronimomartins.com/annual-report/2025/management-report/group-performance/focus-on-profitable-growth.html"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Lisbon",
+          "market": "XLIS",
+          "stooq": "jmt.ls",
+          "selection_market_cap_usd": 12812180324,
+          "selection_market_cap_time": "2026-09-25T08:45:48+00:00",
+          "selection_average_turnover_usd": 29794729
+        },
+        {
+          "ticker": "KESKOB.HE",
+          "group": "goods",
+          "name": "Kesko",
+          "business": "芬兰食品零售，兼建材及汽车贸易",
+          "limitations": "不是纯食品消费股",
+          "sources": [
+            "https://www.kesko.fi/en/media/news-and-releases/stock-exchange-releases/2026/kesko-financial-statements-release-1.1.31.12.2025-keskos-result-improved-net-sales-grew-in-all-divisions/"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Helsinki",
+          "market": "XHEL",
+          "stooq": "keskob.he",
+          "selection_market_cap_usd": 10468116600,
+          "selection_market_cap_time": "2026-09-25T08:59:59+00:00",
+          "selection_average_turnover_usd": 13647184
+        },
+        {
+          "ticker": "COLR.BR",
+          "group": "goods",
+          "name": "Colruyt",
+          "business": "比利时食品超市及相关零售",
+          "limitations": "低毛利零售竞争影响利润",
+          "sources": [
+            "https://www.colruytgroup.com/"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Brussels",
+          "market": "XBRU",
+          "stooq": "colr.br",
+          "selection_market_cap_usd": 5273615040,
+          "selection_market_cap_time": "2026-09-25T08:45:13+00:00",
+          "selection_average_turnover_usd": 1638898
+        },
+        {
+          "ticker": "ZAL.DE",
+          "group": "goods",
+          "name": "Zalando",
+          "business": "欧洲服饰电商平台与履约服务",
+          "limitations": "AI主要用于自身经营，不是AI硬件需求",
+          "sources": [
+            "https://corporate.zalando.com/en/investor-relations/zalando-full-year-2025-results"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Berlin",
+          "market": "XETR",
+          "stooq": "zal.de",
+          "selection_market_cap_usd": 6195322960,
+          "selection_market_cap_time": "2026-09-25T08:47:12+00:00",
+          "selection_average_turnover_usd": 33299133
+        },
+        {
+          "ticker": "VOLV-B.ST",
+          "group": "business",
+          "name": "沃尔沃集团",
+          "business": "卡车、客车、工程机械及售后",
+          "limitations": "欧洲和北美需求共同驱动，非沃尔沃乘用车",
+          "sources": [
+            "https://www.volvogroup.com/content/dam/volvo-group/markets/master/news/2026/feb/Volvo-Group-Annual-Report-2025.pdf"
+          ],
+          "currency": "SEK",
+          "timezone": "Europe/Stockholm",
+          "market": "XSTO",
+          "stooq": "volv-b.st",
+          "selection_market_cap_usd": 66933091417,
+          "selection_market_cap_time": "2026-09-25T09:02:23+00:00",
+          "selection_average_turnover_usd": 94695130
+        },
+        {
+          "ticker": "8TRA.DE",
+          "group": "business",
+          "name": "Traton",
+          "business": "Scania、MAN、International等商用车",
+          "limitations": "欧洲以外北美、巴西业务重要",
+          "sources": [
+            "https://annualreport.traton.com/2025/en/"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Berlin",
+          "market": "XETR",
+          "stooq": "8tra.de",
+          "selection_market_cap_usd": 20068376010,
+          "selection_market_cap_time": "2026-09-25T08:41:43+00:00",
+          "selection_average_turnover_usd": 6431272
+        },
+        {
+          "ticker": "KGX.DE",
+          "group": "business",
+          "name": "KION",
+          "business": "叉车、仓储设备及供应链自动化",
+          "limitations": "工业和仓储资本开支；自动化不等于AI算力建设",
+          "sources": [
+            "https://reports.kiongroup.com/2025/ar/"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Berlin",
+          "market": "XETR",
+          "stooq": "kgx.de",
+          "selection_market_cap_usd": 6017543145,
+          "selection_market_cap_time": "2026-09-25T08:49:38+00:00",
+          "selection_average_turnover_usd": 15063366
+        },
+        {
+          "ticker": "JUN3.DE",
+          "group": "business",
+          "name": "Jungheinrich",
+          "business": "叉车、仓储物流装备和维修租赁",
+          "limitations": "欧洲工业客户为主",
+          "sources": [
+            "https://www.jungheinrich.com/en/investor-relations/reports-publications-6224"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Berlin",
+          "market": "XETR",
+          "stooq": "jun3.de",
+          "selection_market_cap_usd": 2815316097,
+          "selection_market_cap_time": "2026-09-25T08:43:29+00:00",
+          "selection_average_turnover_usd": 3376503
+        },
+        {
+          "ticker": "KCR.HE",
+          "group": "business",
+          "name": "Konecranes",
+          "business": "起重设备、工业服务与港口设备",
+          "limitations": "全球订单，含贸易周期",
+          "sources": [
+            "https://investors.konecranes.com/overview"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Helsinki",
+          "market": "XHEL",
+          "stooq": "kcr.he",
+          "selection_market_cap_usd": 8622845307,
+          "selection_market_cap_time": "2026-09-25T09:01:43+00:00",
+          "selection_average_turnover_usd": 12121841
+        },
+        {
+          "ticker": "VALMT.HE",
+          "group": "business",
+          "name": "Valmet",
+          "business": "制浆造纸设备、流程技术与自动化",
+          "limitations": "客户分布全球，不是当地投资的纯代理",
+          "sources": [
+            "https://www.valmet.com/investors/"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Helsinki",
+          "market": "XHEL",
+          "stooq": "valmt.he",
+          "selection_market_cap_usd": 6025600361,
+          "selection_market_cap_time": "2026-09-25T09:01:14+00:00",
+          "selection_average_turnover_usd": 14641284
+        },
+        {
+          "ticker": "G1A.DE",
+          "group": "business",
+          "name": "GEA",
+          "business": "食品、饮料、制药等加工设备",
+          "limitations": "全球制造业资本支出影响",
+          "sources": [
+            "https://www.gea.com/en/investors/annual-report/"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Berlin",
+          "market": "XETR",
+          "stooq": "g1a.de",
+          "selection_market_cap_usd": 12411887939,
+          "selection_market_cap_time": "2026-09-25T08:47:12+00:00",
+          "selection_average_turnover_usd": 27654896
+        },
+        {
+          "ticker": "SKF-B.ST",
+          "group": "business",
+          "name": "SKF",
+          "business": "工业及汽车轴承与配套服务",
+          "limitations": "全球工业及汽车周期共同影响",
+          "sources": [
+            "https://www.skf.com/financial-reports-service/download/2242/report/Annual%20Report%202025"
+          ],
+          "currency": "SEK",
+          "timezone": "Europe/Stockholm",
+          "market": "XSTO",
+          "stooq": "skf-b.st",
+          "selection_market_cap_usd": 12501004878,
+          "selection_market_cap_time": "2026-09-25T09:00:52+00:00",
+          "selection_average_turnover_usd": 28232713
+        },
+        {
+          "ticker": "PSN.L",
+          "group": "housing",
+          "name": "Persimmon",
+          "business": "英国住宅开发销售",
+          "limitations": "英国房贷、土地和住宅交付影响",
+          "sources": [
+            "https://www.persimmonhomes.com/corporate/media/z2fi3dtb/persimmon-fy2025-results.pdf"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "psn.l",
+          "selection_market_cap_usd": 4924636112,
+          "selection_market_cap_time": "2026-09-25T08:47:26+00:00",
+          "selection_average_turnover_usd": 32348565
+        },
+        {
+          "ticker": "TW.L",
+          "group": "housing",
+          "name": "Taylor Wimpey",
+          "business": "英国住宅开发，兼西班牙住宅",
+          "limitations": "英国住宅需求为主",
+          "sources": [
+            "https://www.taylorwimpey.co.uk/corporate/investors/results-and-reports"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "tw.l",
+          "selection_market_cap_usd": 3648376924,
+          "selection_market_cap_time": "2026-09-25T08:47:11+00:00",
+          "selection_average_turnover_usd": 17018384
+        },
+        {
+          "ticker": "BTRW.L",
+          "group": "housing",
+          "name": "Barratt Redrow",
+          "business": "英国住宅开发销售",
+          "limitations": "历史包括合并前Barratt；并购改变公司构成",
+          "sources": [
+            "https://www.barrattredrow.co.uk/news/2026/full-year-results-2026"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "btrw.l",
+          "selection_market_cap_usd": 5642537815,
+          "selection_market_cap_time": "2026-09-25T08:46:55+00:00",
+          "selection_average_turnover_usd": 31003630
+        },
+        {
+          "ticker": "BKG.L",
+          "group": "housing",
+          "name": "Berkeley",
+          "business": "伦敦及英格兰东南部住宅开发",
+          "limitations": "高端住宅与大型项目集中",
+          "sources": [
+            "https://www.berkeleygroup.co.uk/investors/results-and-announcements"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "bkg.l",
+          "selection_market_cap_usd": 4040864068,
+          "selection_market_cap_time": "2026-09-25T08:45:41+00:00",
+          "selection_average_turnover_usd": 10693206
+        },
+        {
+          "ticker": "BWY.L",
+          "group": "housing",
+          "name": "Bellway",
+          "business": "英国住宅建造销售",
+          "limitations": "利率和交付节奏影响",
+          "sources": [
+            "https://www.bellwayplc.co.uk/investor-centre/financial-performance/results-reports-presentations"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "bwy.l",
+          "selection_market_cap_usd": 3057705639,
+          "selection_market_cap_time": "2026-09-25T08:48:05+00:00",
+          "selection_average_turnover_usd": 12392435
+        },
+        {
+          "ticker": "WIE.VI",
+          "group": "housing",
+          "name": "Wienerberger",
+          "business": "屋面、管道、墙体材料",
+          "limitations": "欧洲住宅翻修为重要需求，兼基础设施和北美",
+          "sources": [
+            "https://www.wienerberger.com/en/media/press-releases/2026/20260325-wienerberger-Annual-Report-2025.html"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Amsterdam",
+          "market": "XWBO",
+          "stooq": "wie.vi",
+          "selection_market_cap_usd": 2161636961,
+          "selection_market_cap_time": "2026-09-25T08:45:27+00:00",
+          "selection_average_turnover_usd": 7715368
+        },
+        {
+          "ticker": "GEBN.SW",
+          "group": "housing",
+          "name": "Geberit",
+          "business": "卫浴、冲水及管道系统",
+          "limitations": "欧洲为主，新建与翻修混合",
+          "sources": [
+            "https://reports.geberit.com/annual-report/2025/business-report/business-and-financial-review/financial-year-2025/net-sales.html"
+          ],
+          "currency": "CHF",
+          "timezone": "Europe/Zurich",
+          "market": "XSWX",
+          "stooq": "gebn.sw",
+          "selection_market_cap_usd": 21303629215,
+          "selection_market_cap_time": "2026-09-25T08:46:55+00:00",
+          "selection_average_turnover_usd": 46631974
+        },
+        {
+          "ticker": "ROCK-B.CO",
+          "group": "housing",
+          "name": "Rockwool",
+          "business": "岩棉保温及建筑材料",
+          "limitations": "欧洲及北美，兼商业建筑和翻修",
+          "sources": [
+            "https://www.rockwool.com/group/about-us/investors/financial-reports/annual-report-highlights-2025/"
+          ],
+          "currency": "DKK",
+          "timezone": "Europe/Copenhagen",
+          "market": "XCSE",
+          "stooq": "rock-b.co",
+          "selection_market_cap_usd": 6026924400,
+          "selection_market_cap_time": "2026-09-25T09:04:41+00:00",
+          "selection_average_turnover_usd": 17341095
+        },
+        {
+          "ticker": "BNP.PA",
+          "group": "banks",
+          "name": "法国巴黎银行",
+          "business": "存贷利差、企业投行及资管保险",
+          "limitations": "全球业务，资本市场收入也影响利润",
+          "sources": [
+            "https://invest.bnpparibas/lettre/resultats-du-quatrieme-trimestre-et-de-l-annee-2025/section-2"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Paris",
+          "market": "XPAR",
+          "stooq": "bnp.pa",
+          "selection_market_cap_usd": 124388183799,
+          "selection_market_cap_time": "2026-09-25T08:47:19+00:00",
+          "selection_average_turnover_usd": 198083086
+        },
+        {
+          "ticker": "ISP.MI",
+          "group": "banks",
+          "name": "联合圣保罗",
+          "business": "意大利及中东欧银行、财富和保险",
+          "limitations": "意大利需求与利率较重要",
+          "sources": [
+            "https://group.intesasanpaolo.com/en/investor-relations/press-releases/2026/02/20260202-ris-fy25-uk"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Rome",
+          "market": "XMIL",
+          "stooq": "isp.mi",
+          "selection_market_cap_usd": 134298132309,
+          "selection_market_cap_time": "2026-09-25T08:47:29+00:00",
+          "selection_average_turnover_usd": 345903611
+        },
+        {
+          "ticker": "INGA.AS",
+          "group": "banks",
+          "name": "ING",
+          "business": "欧洲零售存贷及全球批发银行",
+          "limitations": "不是纯荷兰信贷",
+          "sources": [
+            "https://ing.com/news/press-releases/4qfy2025-ing-press-release.html"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Amsterdam",
+          "market": "XAMS",
+          "stooq": "inga.as",
+          "selection_market_cap_usd": 104284894934,
+          "selection_market_cap_time": "2026-09-25T08:49:59+00:00",
+          "selection_average_turnover_usd": 195803879
+        },
+        {
+          "ticker": "LLOY.L",
+          "group": "banks",
+          "name": "劳埃德银行",
+          "business": "英国零售、按揭和商业银行",
+          "limitations": "英国利率、房贷与信用周期",
+          "sources": [
+            "https://www.lloydsbankinggroup.com/investors/annual-report.html"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "lloy.l",
+          "selection_market_cap_usd": 83105529131,
+          "selection_market_cap_time": "2026-09-25T08:47:28+00:00",
+          "selection_average_turnover_usd": 207844648
+        },
+        {
+          "ticker": "CBK.DE",
+          "group": "banks",
+          "name": "德国商业银行",
+          "business": "德国企业和零售银行、波兰mBank",
+          "limitations": "德国中小企业及当地贷款需求",
+          "sources": [
+            "https://www.commerzbank.de/group/newsroom/press-releases/annual-press-conference.html"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Berlin",
+          "market": "XETR",
+          "stooq": "cbk.de",
+          "selection_market_cap_usd": 51917613248,
+          "selection_market_cap_time": "2026-09-25T08:47:12+00:00",
+          "selection_average_turnover_usd": 112432132
+        },
+        {
+          "ticker": "EBS.VI",
+          "group": "banks",
+          "name": "Erste",
+          "business": "奥地利及中东欧零售商业银行",
+          "limitations": "多国利率和信用周期",
+          "sources": [
+            "https://www.erstegroup.com/en/investors/reports/finanzberichte"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Amsterdam",
+          "market": "XWBO",
+          "stooq": "ebs.vi",
+          "selection_market_cap_usd": 54449571339,
+          "selection_market_cap_time": "2026-09-25T08:47:33+00:00",
+          "selection_average_turnover_usd": 41895271
+        },
+        {
+          "ticker": "BKT.MC",
+          "group": "banks",
+          "name": "Bankinter",
+          "business": "西班牙、葡萄牙和爱尔兰银行",
+          "limitations": "区域存贷及财富管理",
+          "sources": [
+            "https://www.bankinter.com/www/webcorp/swf/memoria2025/en/results.html"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Madrid",
+          "market": "XMAD",
+          "stooq": "bkt.mc",
+          "selection_market_cap_usd": 17031700876,
+          "selection_market_cap_time": "2026-09-25T08:47:04+00:00",
+          "selection_average_turnover_usd": 24170392
+        },
+        {
+          "ticker": "BG.VI",
+          "group": "banks",
+          "name": "BAWAG",
+          "business": "零售及中小企业银行",
+          "limitations": "奥地利德国为重要市场，兼收购扩张",
+          "sources": [
+            "https://www.bawaggroup.com/resource/blob/141498/d580d768d98aa70632d39de9e89266d6/20260515-annual-report-bawag-group-2025-data.pdf"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Amsterdam",
+          "market": "XWBO",
+          "stooq": "bg.vi",
+          "selection_market_cap_usd": 15987614164,
+          "selection_market_cap_time": "2026-09-25T08:45:48+00:00",
+          "selection_average_turnover_usd": 22760154
+        },
+        {
+          "ticker": "NWG.L",
+          "group": "banks",
+          "name": "NatWest",
+          "business": "英国个人、企业银行及财富管理",
+          "limitations": "英国本地金融周期",
+          "sources": [
+            "https://www.natwestgroup.com/news-and-insights/latest-stories/financial-reporting/2026/feb/annual-results-2025.html"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "nwg.l",
+          "selection_market_cap_usd": 72285916439,
+          "selection_market_cap_time": "2026-09-25T08:47:16+00:00",
+          "selection_average_turnover_usd": 194071858
+        },
+        {
+          "ticker": "ICG.L",
+          "group": "banks",
+          "name": "ICG私募资管",
+          "business": "私募信用、结构资本、二手份额及实物资产管理费",
+          "limitations": "全球资产；并非银行利差，底层AI敞口未单列",
+          "sources": [
+            "https://www.icgam.com/2026/05/21/icg-final-results-for-the-financial-year-ended-31-march-2026/"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "icg.l",
+          "selection_market_cap_usd": 7171458748,
+          "selection_market_cap_time": "2026-09-25T09:03:31+00:00",
+          "selection_average_turnover_usd": 25616948
+        },
+        {
+          "ticker": "EQT.ST",
+          "group": "banks",
+          "name": "EQT私募资管",
+          "business": "私募股权和实物资产管理费及业绩报酬",
+          "limitations": "全球资产；有基础设施及科技敞口，不认定零AI",
+          "sources": [
+            "https://eqtgroup.com/shareholders/"
+          ],
+          "currency": "SEK",
+          "timezone": "Europe/Stockholm",
+          "market": "XSTO",
+          "stooq": "eqt.st",
+          "selection_market_cap_usd": 36142537206,
+          "selection_market_cap_time": "2026-09-25T09:02:30+00:00",
+          "selection_average_turnover_usd": 41917254
+        },
+        {
+          "ticker": "PGHN.SW",
+          "group": "banks",
+          "name": "Partners Group",
+          "business": "私募股权、信用、地产和基础设施资管",
+          "limitations": "管理费和业绩费；全球资产，底层AI敞口未单列",
+          "sources": [
+            "https://www.partnersgroup.com/en/shareholders/"
+          ],
+          "currency": "CHF",
+          "timezone": "Europe/Zurich",
+          "market": "XSWX",
+          "stooq": "pghn.sw",
+          "selection_market_cap_usd": 18660977137,
+          "selection_market_cap_time": "2026-09-25T08:47:31+00:00",
+          "selection_average_turnover_usd": 90129232
+        }
+      ]
+    },
+    {
+      "id": "japan",
+      "name": "日本",
+      "note": "日本上市主要业务股票。工业含出口商，住宅兼翻修及出租住宅。金融含大行、地区银行与欧力士、SBI等投资金融集团。",
+      "stocks": [
+        {
+          "ticker": "9020.T",
+          "group": "services",
+          "name": "JR东日本",
+          "business": "铁路客运、车站零售和地产",
+          "limitations": "地产利润占比重要，不是纯客运",
+          "sources": [
+            "https://www.jreast.co.jp/e/investor/financial/2025/pdf/2025_financialresults.pdf"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "9020.jp",
+          "selection_market_cap_usd": 24740047086,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 66282101
+        },
+        {
+          "ticker": "9021.T",
+          "group": "services",
+          "name": "JR西日本",
+          "business": "铁路客运、流通零售及不动产",
+          "limitations": "旅游与通勤混合",
+          "sources": [
+            "https://www.westjr.co.jp/global/en/ir/library/annual-report/2025/pdf/jr_west_integrated_report_2025.pdf"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "9021.jp",
+          "selection_market_cap_usd": 8752664584,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 49005319
+        },
+        {
+          "ticker": "9022.T",
+          "group": "services",
+          "name": "JR东海",
+          "business": "东海道新干线及铁路配套业务",
+          "limitations": "客运集中，大型铁路投资影响现金流",
+          "sources": [
+            "https://global.jr-central.co.jp/en/company/ir/brief-announcement/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "9022.jp",
+          "selection_market_cap_usd": 22714657831,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 62974874
+        },
+        {
+          "ticker": "9005.T",
+          "group": "services",
+          "name": "东急",
+          "business": "交通、生活服务、酒店与不动产",
+          "limitations": "地产贡献大，不能单独解释为消费",
+          "sources": [
+            "https://ir.tokyu.co.jp/en/ir/finance/segment.html"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "9005.jp",
+          "selection_market_cap_usd": 5867982381,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 24533575
+        },
+        {
+          "ticker": "4661.T",
+          "group": "services",
+          "name": "东方乐园",
+          "business": "东京迪士尼主题公园、酒店及相关服务",
+          "limitations": "本地消费和入境旅游均重要",
+          "sources": [
+            "https://www.olc.co.jp/en/ir/library/financial/main/01117/teaserItems1/0/linkList/0/link/s2025-04e.pdf"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "4661.jp",
+          "selection_market_cap_usd": 30820295469,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 111911410
+        },
+        {
+          "ticker": "9602.T",
+          "group": "services",
+          "name": "东宝",
+          "business": "电影发行、影院、内容IP及地产",
+          "limitations": "内容作品周期与租赁利润也重要",
+          "sources": [
+            "https://www.toho.co.jp/en/ir/disclosure/results/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "9602.jp",
+          "selection_market_cap_usd": 8323517396,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 39612878
+        },
+        {
+          "ticker": "9202.T",
+          "group": "services",
+          "name": "ANA",
+          "business": "航空客运、货运及旅行服务",
+          "limitations": "国际航线、油价和汇率经营影响",
+          "sources": [
+            "https://www.ana.co.jp/group/en/investors/personal/ana_earnings/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "9202.jp",
+          "selection_market_cap_usd": 8280281607,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 45112069
+        },
+        {
+          "ticker": "9433.T",
+          "group": "services",
+          "name": "KDDI",
+          "business": "日本个人通信、企业服务及金融零售",
+          "limitations": "Telehouse数据中心属间接AI敞口，非零AI",
+          "sources": [
+            "https://newsroom.kddi.com/english/ir-news/detail/kddi_ir-927_3874.html"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "9433.jp",
+          "selection_market_cap_usd": 71131570105,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 170684198
+        },
+        {
+          "ticker": "8267.T",
+          "group": "goods",
+          "name": "永旺",
+          "business": "食品百货零售、购物中心及金融",
+          "limitations": "日本为主，商场和信用卡利润也重要",
+          "sources": [
+            "https://www.aeon.info/ir/finance/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "8267.jp",
+          "selection_market_cap_usd": 22777064057,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 84919799
+        },
+        {
+          "ticker": "8194.T",
+          "group": "goods",
+          "name": "Life超市",
+          "business": "日本食品超市",
+          "limitations": "关东关西食品需求",
+          "sources": [
+            "https://www.lifecorp.jp/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "8194.jp",
+          "selection_market_cap_usd": 1486478449,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 3851702
+        },
+        {
+          "ticker": "3086.T",
+          "group": "goods",
+          "name": "J.Front",
+          "business": "大丸松坂屋百货、PARCO及地产",
+          "limitations": "游客消费和地产影响",
+          "sources": [
+            "https://www.j-front-retailing.com/english/ir/library/annual.php"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "3086.jp",
+          "selection_market_cap_usd": 4186511347,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 26265117
+        },
+        {
+          "ticker": "3099.T",
+          "group": "goods",
+          "name": "三越伊势丹",
+          "business": "日本百货零售与相关服务",
+          "limitations": "高端消费、入境客流占重要地位",
+          "sources": [
+            "https://www.imhds.co.jp/content/dam/imhds/corporate/pdf/ir/library/annual-report/en/imhds_report2025_en_A3.pdf"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "3099.jp",
+          "selection_market_cap_usd": 7345962068,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 52662016
+        },
+        {
+          "ticker": "7453.T",
+          "group": "goods",
+          "name": "良品计划",
+          "business": "无印良品服饰、家居和日用品",
+          "limitations": "海外尤其东亚业务重要",
+          "sources": [
+            "https://www.ryohin-keikaku.jp/en/ir/results"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "7453.jp",
+          "selection_market_cap_usd": 13614860999,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 96789320
+        },
+        {
+          "ticker": "7532.T",
+          "group": "goods",
+          "name": "PPIH唐吉诃德",
+          "business": "折扣店、UNY综合零售",
+          "limitations": "日本为主，兼海外零售和游客消费",
+          "sources": [
+            "https://ppih.co.jp/en/ir/pdf/2025/FY2025_full_en.pdf"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "7532.jp",
+          "selection_market_cap_usd": 13479678498,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 60278104
+        },
+        {
+          "ticker": "9843.T",
+          "group": "goods",
+          "name": "似鸟",
+          "business": "家具家居零售",
+          "limitations": "日本需求为主，进口成本及海外扩张影响",
+          "sources": [
+            "https://www.nitorihd.co.jp/en/ir/library/financial_statements.html"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "9843.jp",
+          "selection_market_cap_usd": 11003781896,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 70759820
+        },
+        {
+          "ticker": "2212.T",
+          "group": "goods",
+          "name": "山崎面包",
+          "business": "面包、糕点及加工食品",
+          "limitations": "日本居民食品消费为主",
+          "sources": [
+            "https://www.yamazakipan.co.jp/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "2212.jp",
+          "selection_market_cap_usd": 4541510987,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 14711692
+        },
+        {
+          "ticker": "3064.T",
+          "group": "business",
+          "name": "MonotaRO",
+          "business": "工业维修保养耗材电商",
+          "limitations": "日本企业日常采购，不全是固定资产投资",
+          "sources": [
+            "https://corp.monotaro.com/en/ir/finance/finance_01.html"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "3064.jp",
+          "selection_market_cap_usd": 6103005132,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 26019958
+        },
+        {
+          "ticker": "6326.T",
+          "group": "business",
+          "name": "久保田",
+          "business": "农业机械、工程机械及水环境设备",
+          "limitations": "海外收入较高，反映全球农业设备周期",
+          "sources": [
+            "https://www.kubota.com/ir/financial/presentation/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "6326.jp",
+          "selection_market_cap_usd": 19844994061,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 73792601
+        },
+        {
+          "ticker": "5929.T",
+          "group": "business",
+          "name": "三和控股",
+          "business": "门、卷帘及建筑开口设备",
+          "limitations": "日本、北美和欧洲工业及建筑需求",
+          "sources": [
+            "https://www.sanwa-hldgs.co.jp/english/ir/assets/pdf/library/annual/2025-en.pdf"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "5929.jp",
+          "selection_market_cap_usd": 4600081465,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 13787347
+        },
+        {
+          "ticker": "6113.T",
+          "group": "business",
+          "name": "AMADA",
+          "business": "钣金加工、金属切削与相关机床",
+          "limitations": "全球制造业投资，非半导体设备专营",
+          "sources": [
+            "https://www.amada.co.jp/ja/ir/finance/segment/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "6113.jp",
+          "selection_market_cap_usd": 4847869014,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 36620007
+        },
+        {
+          "ticker": "6103.T",
+          "group": "business",
+          "name": "大隈",
+          "business": "数控机床和制造设备",
+          "limitations": "出口较多，汽车及一般制造业周期",
+          "sources": [
+            "https://www.okuma.co.jp/english/ir/library2.html"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "6103.jp",
+          "selection_market_cap_usd": 1720020255,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 14039315
+        },
+        {
+          "ticker": "8051.T",
+          "group": "business",
+          "name": "山善",
+          "business": "生产设备、工业工具及家居产品贸易",
+          "limitations": "日本与海外制造业采购，兼消费品",
+          "sources": [
+            "https://www.yamazen.co.jp/archives/007/integrated_report_e_2024_1.pdf"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "8051.jp",
+          "selection_market_cap_usd": 1108892640,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 2617578
+        },
+        {
+          "ticker": "9678.T",
+          "group": "business",
+          "name": "Kanamoto",
+          "business": "工程机械租赁",
+          "limitations": "日本建设活动为主，包含公共工程",
+          "sources": [
+            "https://www.kanamoto.co.jp/en/news/news/pdf/260410/260410.pdf"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "9678.jp",
+          "selection_market_cap_usd": 1181688941,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 3373076
+        },
+        {
+          "ticker": "5411.T",
+          "group": "business",
+          "name": "JFE",
+          "business": "钢铁、工程及钢材贸易",
+          "limitations": "日本投资与全球钢价共同影响",
+          "sources": [
+            "https://www.jfe-holdings.co.jp/en/investor/library/annual_securities_report/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "5411.jp",
+          "selection_market_cap_usd": 7434784401,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 77396768
+        },
+        {
+          "ticker": "1928.T",
+          "group": "housing",
+          "name": "积水住宅",
+          "business": "住宅建造、租赁住宅及开发管理",
+          "limitations": "日本重要，但美国住宅业务不可忽略",
+          "sources": [
+            "https://www.sekisuihouse.co.jp/english/company/financial/library/yearly/yearly_2025/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "1928.jp",
+          "selection_market_cap_usd": 13834083808,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 56351089
+        },
+        {
+          "ticker": "1878.T",
+          "group": "housing",
+          "name": "大东建托",
+          "business": "日本出租住宅建造、租赁管理",
+          "limitations": "租赁管理提供较稳定收入，非纯新屋销售",
+          "sources": [
+            "https://www.kentaku.co.jp/corporate/en/ir/pdf/2025/factbook/03.pdf"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "1878.jp",
+          "selection_market_cap_usd": 6807362434,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 33567419
+        },
+        {
+          "ticker": "3288.T",
+          "group": "housing",
+          "name": "Open House",
+          "business": "日本独栋住宅、公寓及相关不动产",
+          "limitations": "含美国投资性住宅及收购影响",
+          "sources": [
+            "https://openhouse-group.co.jp/ir/en/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "3288.jp",
+          "selection_market_cap_usd": 5327081796,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 14564881
+        },
+        {
+          "ticker": "1808.T",
+          "group": "housing",
+          "name": "长谷工",
+          "business": "日本公寓设计建造、管理及翻修",
+          "limitations": "公寓市场及建设成本影响",
+          "sources": [
+            "https://www.haseko.co.jp/hc/english/sustainability/pdf/integrated_report_2025.pdf"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "1808.jp",
+          "selection_market_cap_usd": 4581587534,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 15404653
+        },
+        {
+          "ticker": "3291.T",
+          "group": "housing",
+          "name": "饭田集团",
+          "business": "日本独栋住宅建造销售",
+          "limitations": "住宅用地、房贷及售价影响",
+          "sources": [
+            "https://www.ighd.co.jp/en/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "3291.jp",
+          "selection_market_cap_usd": 3965447861,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 7951930
+        },
+        {
+          "ticker": "5938.T",
+          "group": "housing",
+          "name": "LIXIL",
+          "business": "卫浴、门窗及住宅建材",
+          "limitations": "日本销售约三分之二，兼海外卫浴",
+          "sources": [
+            "https://newsroom.lixil.com/20250430_fye2025"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "5938.jp",
+          "selection_market_cap_usd": 3147213847,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 23353493
+        },
+        {
+          "ticker": "7981.T",
+          "group": "housing",
+          "name": "Takara Standard",
+          "business": "厨房、浴室及住宅水回设备",
+          "limitations": "日本新建与翻修需求",
+          "sources": [
+            "https://www.takara-standard.co.jp/files/ir/en/Overviews_of_Financial_Results/FY2024/EN_FY2024_Overviews_Financial_Results20250508.pdf"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "7981.jp",
+          "selection_market_cap_usd": 1256425215,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 2435163
+        },
+        {
+          "ticker": "5947.T",
+          "group": "housing",
+          "name": "林内",
+          "business": "热水器、厨房及供暖设备",
+          "limitations": "日本利润重要，但海外收入超过一半",
+          "sources": [
+            "https://www.rinnai.co.jp/en/ir/highlight/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "5947.jp",
+          "selection_market_cap_usd": 3016625154,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 7282154
+        },
+        {
+          "ticker": "8306.T",
+          "group": "banks",
+          "name": "三菱日联",
+          "business": "存贷、信托、证券及海外银行",
+          "limitations": "全球金融业务，非纯日本信贷",
+          "sources": [
+            "https://www.mufg.jp/dam/ir/report/annual_report/pdf/ar2025_en.pdf"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "8306.jp",
+          "selection_market_cap_usd": 264740895255,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 924575617
+        },
+        {
+          "ticker": "8316.T",
+          "group": "banks",
+          "name": "三井住友金融",
+          "business": "商业银行、信用卡及证券",
+          "limitations": "日本与海外金融共同影响",
+          "sources": [
+            "https://www.smfg.co.jp/english/gr2026/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "8316.jp",
+          "selection_market_cap_usd": 166484970415,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 524777311
+        },
+        {
+          "ticker": "8411.T",
+          "group": "banks",
+          "name": "瑞穗金融",
+          "business": "零售、企业银行及证券",
+          "limitations": "海外投行和贷款也重要",
+          "sources": [
+            "https://www.mizuho-fg.co.jp/investors/financial/annual/data2503/pdf/data2503_all.pdf"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "8411.jp",
+          "selection_market_cap_usd": 132232430441,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 493575457
+        },
+        {
+          "ticker": "8308.T",
+          "group": "banks",
+          "name": "Resona",
+          "business": "日本零售、中小企业及信托银行",
+          "limitations": "本地存贷利差与手续费",
+          "sources": [
+            "https://www.resona-gr.co.jp/holdings/english/investors/financial/annual/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "8308.jp",
+          "selection_market_cap_usd": 36013646970,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 153017303
+        },
+        {
+          "ticker": "8309.T",
+          "group": "banks",
+          "name": "三井住友信托",
+          "business": "信托银行、资产管理及投资者服务",
+          "limitations": "资产管理及市场走势影响，不是纯贷款",
+          "sources": [
+            "https://www.smtg.jp/english/investors/report/disclosure/2025"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "8309.jp",
+          "selection_market_cap_usd": 31419047278,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 109225286
+        },
+        {
+          "ticker": "7186.T",
+          "group": "banks",
+          "name": "横滨金融集团",
+          "business": "横滨及周边地区银行",
+          "limitations": "原Concordia，代码历史连续；并购影响规模",
+          "sources": [
+            "https://www.yokohamafg.co.jp/shareholder/highlight-all/index.html"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "7186.jp",
+          "selection_market_cap_usd": 13570278008,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 45222530
+        },
+        {
+          "ticker": "7182.T",
+          "group": "banks",
+          "name": "日本邮政银行",
+          "business": "存款资金运用与证券投资",
+          "limitations": "债券收益和利率风险比传统企业贷款更重要",
+          "sources": [
+            "https://www.jp-bank.japanpost.jp/en/ir/press/2025/en_ir_prs_000156.html"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "7182.jp",
+          "selection_market_cap_usd": 75545995081,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 129418421
+        },
+        {
+          "ticker": "8354.T",
+          "group": "banks",
+          "name": "福冈金融",
+          "business": "九州地区银行",
+          "limitations": "地区企业、居民存贷和信用成本",
+          "sources": [
+            "https://www.fukuoka-fg.com/en/investor/library/annual.html"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "8354.jp",
+          "selection_market_cap_usd": 9583997497,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 33910296
+        },
+        {
+          "ticker": "8331.T",
+          "group": "banks",
+          "name": "千叶银行",
+          "business": "千叶及东京圈地区银行",
+          "limitations": "住宅及中小企业金融",
+          "sources": [
+            "https://www.chibabank.co.jp/f/integrated_report_2025_an_25_009"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "8331.jp",
+          "selection_market_cap_usd": 12408663242,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 45763986
+        },
+        {
+          "ticker": "7180.T",
+          "group": "banks",
+          "name": "九州金融",
+          "business": "鹿儿岛、肥后银行等区域金融",
+          "limitations": "地区信贷与证券运用",
+          "sources": [
+            "https://www.kyushu-fg.co.jp/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "7180.jp",
+          "selection_market_cap_usd": 4649692182,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 13212868
+        },
+        {
+          "ticker": "8591.T",
+          "group": "banks",
+          "name": "欧力士",
+          "business": "租赁、金融、保险、资产管理及私募投资",
+          "limitations": "多元化金融，并非纯银行或纯PE",
+          "sources": [
+            "https://www.orix.co.jp/grp/en/ir/financial/segment/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "8591.jp",
+          "selection_market_cap_usd": 40643139430,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 126697757
+        },
+        {
+          "ticker": "8473.T",
+          "group": "banks",
+          "name": "SBI控股",
+          "business": "证券、银行、保险及投资业务",
+          "limitations": "创投和加密资产也影响利润，底层AI未单列",
+          "sources": [
+            "https://www.sbigroup.co.jp/english/investors/"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "8473.jp",
+          "selection_market_cap_usd": 13500520693,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 88903746
+        }
+      ]
+    },
+    {
+      "id": "southeast_asia",
+      "name": "东南亚",
+      "note": "覆盖新加坡、马来西亚、印尼、泰国、越南；菲律宾暂不纳入。工业兼资源设备、港口及海工，住宅包括中型开发商。没有强凑上市私募资管公司。",
+      "stocks": [
+        {
+          "ticker": "BDMS.BK",
+          "group": "services",
+          "name": "曼谷杜斯特医疗",
+          "business": "泰国医院诊疗及配套服务",
+          "limitations": "泰国患者与国际医疗旅游混合",
+          "sources": [
+            "https://investor.bdms.co.th/en"
+          ],
+          "currency": "THB",
+          "timezone": "Asia/Bangkok",
+          "market": "XBKK",
+          "stooq": "bdms.bk",
+          "selection_market_cap_usd": 9634407718,
+          "selection_market_cap_time": "2026-09-25T08:32:44+00:00",
+          "selection_average_turnover_usd": 45688114
+        },
+        {
+          "ticker": "BH.BK",
+          "group": "services",
+          "name": "康民医院",
+          "business": "高端医院及诊疗服务",
+          "limitations": "国际患者权重大，非泰国家庭消费纯代理",
+          "sources": [
+            "https://www.bumrungrad.com/en/blog-news/q2-2025-results"
+          ],
+          "currency": "THB",
+          "timezone": "Asia/Bangkok",
+          "market": "XBKK",
+          "stooq": "bh.bk",
+          "selection_market_cap_usd": 4700132507,
+          "selection_market_cap_time": "2026-09-25T08:31:29+00:00",
+          "selection_average_turnover_usd": 23430998
+        },
+        {
+          "ticker": "CENTEL.BK",
+          "group": "services",
+          "name": "Centel",
+          "business": "泰国餐饮连锁、酒店住宿",
+          "limitations": "酒店含马尔代夫、日本等海外业务",
+          "sources": [
+            "https://investor.centarahotelsresorts.com/en/investor-relations/downloads/one-report"
+          ],
+          "currency": "THB",
+          "timezone": "Asia/Bangkok",
+          "market": "XBKK",
+          "stooq": "centel.bk",
+          "selection_market_cap_usd": 1782713086,
+          "selection_market_cap_time": "2026-09-25T08:34:29+00:00",
+          "selection_average_turnover_usd": 4959256
+        },
+        {
+          "ticker": "C6L.SI",
+          "group": "services",
+          "name": "新加坡航空",
+          "business": "航空客运、货运及相关服务",
+          "limitations": "全球客流及油价影响，非本地消费纯代理",
+          "sources": [
+            "https://www.singaporeair.com/content/dam/sia/web-assets/pdfs/about-us/information-for-investors/annual-report/annualreport2425.pdf"
+          ],
+          "currency": "SGD",
+          "timezone": "Asia/Singapore",
+          "market": "XSES",
+          "stooq": "c6l.si",
+          "selection_market_cap_usd": 16487189191,
+          "selection_market_cap_time": "2026-09-25T08:52:30+00:00",
+          "selection_average_turnover_usd": 36334233
+        },
+        {
+          "ticker": "5878.KL",
+          "group": "services",
+          "name": "KPJ医疗",
+          "business": "马来西亚私立医院",
+          "limitations": "地区医疗需求，兼境外医疗业务",
+          "sources": [
+            "https://kpj.listedcompany.com/"
+          ],
+          "currency": "MYR",
+          "timezone": "Asia/Kuala_Lumpur",
+          "market": "XKLS",
+          "stooq": "5878.kl",
+          "selection_market_cap_usd": 2903268575,
+          "selection_market_cap_time": "2026-09-25T08:44:50+00:00",
+          "selection_average_turnover_usd": 5791808
+        },
+        {
+          "ticker": "TLKM.JK",
+          "group": "services",
+          "name": "印尼电信",
+          "business": "移动通信、宽带、企业网络",
+          "limitations": "数据中心为附带业务，存在间接AI敞口",
+          "sources": [
+            "https://www.telkom.co.id/sites/news-resources/en_US/news/telkom-q1-2025-financial-report%2C-strengthening-digital-business%2C-telkom-records-consolidated-revenue-of-idr-36.6-trillion-in-early-2025-2983"
+          ],
+          "currency": "IDR",
+          "timezone": "Asia/Jakarta",
+          "market": "XIDX",
+          "stooq": "tlkm.jk",
+          "selection_market_cap_usd": 13224943890,
+          "selection_market_cap_time": "2026-09-25T08:49:59+00:00",
+          "selection_average_turnover_usd": 14304732
+        },
+        {
+          "ticker": "4863.KL",
+          "group": "services",
+          "name": "马来西亚电信",
+          "business": "宽带、企业通信及网络批发",
+          "limitations": "有数据中心扩张，不能认定零AI收入",
+          "sources": [
+            "https://tm.com.my/iar2025/template/pdf/Telekom_Malaysia_Berhad_IAR25.pdf"
+          ],
+          "currency": "MYR",
+          "timezone": "Asia/Kuala_Lumpur",
+          "market": "XKLS",
+          "stooq": "4863.kl",
+          "selection_market_cap_usd": 7485050944,
+          "selection_market_cap_time": "2026-09-25T08:50:05+00:00",
+          "selection_average_turnover_usd": 7290320
+        },
+        {
+          "ticker": "VJC.VN",
+          "group": "services",
+          "name": "越捷航空",
+          "business": "越南及国际低成本航空客运",
+          "limitations": "燃油、飞机融资及售后回租影响利润",
+          "sources": [
+            "https://ir.vietjetair.com/"
+          ],
+          "currency": "VND",
+          "timezone": "Asia/Bangkok",
+          "market": "VN",
+          "stooq": "vjc.vn",
+          "selection_market_cap_usd": 3929801733,
+          "selection_market_cap_time": "2026-09-25T07:45:21+00:00",
+          "selection_average_turnover_usd": 5857124
+        },
+        {
+          "ticker": "CPALL.BK",
+          "group": "goods",
+          "name": "CP ALL",
+          "business": "泰国7-Eleven及CP Axtra批发零售",
+          "limitations": "不再重复持有CP Axtra，以免重复计算",
+          "sources": [
+            "https://www.cpall.co.th/wp-content/uploads/2025/03/CP_ALL_56-1_-OneReport_2024_EN_25MAR-Final.pdf"
+          ],
+          "currency": "THB",
+          "timezone": "Asia/Bangkok",
+          "market": "XBKK",
+          "stooq": "cpall.bk",
+          "selection_market_cap_usd": 11834220348,
+          "selection_market_cap_time": "2026-09-25T08:32:34+00:00",
+          "selection_average_turnover_usd": 38230595
+        },
+        {
+          "ticker": "3689.KL",
+          "group": "goods",
+          "name": "F&N马来西亚",
+          "business": "乳品、饮料及食品",
+          "limitations": "马来西亚和泰国为重要市场",
+          "sources": [
+            "https://www.fn.com.my/"
+          ],
+          "currency": "MYR",
+          "timezone": "Asia/Kuala_Lumpur",
+          "market": "XKLS",
+          "stooq": "3689.kl",
+          "selection_market_cap_usd": 2069398179,
+          "selection_market_cap_time": "2026-09-25T08:50:05+00:00",
+          "selection_average_turnover_usd": 388768
+        },
+        {
+          "ticker": "HMPRO.BK",
+          "group": "goods",
+          "name": "HomePro",
+          "business": "家居装修及家电零售",
+          "limitations": "既反映消费也反映翻修周期",
+          "sources": [
+            "https://hmpro.listedcompany.com/"
+          ],
+          "currency": "THB",
+          "timezone": "Asia/Bangkok",
+          "market": "XBKK",
+          "stooq": "hmpro.bk",
+          "selection_market_cap_usd": 2398127380,
+          "selection_market_cap_time": "2026-09-25T08:30:33+00:00",
+          "selection_average_turnover_usd": 7062708
+        },
+        {
+          "ticker": "AMRT.JK",
+          "group": "goods",
+          "name": "Alfamart",
+          "business": "印尼便利店及日用品零售",
+          "limitations": "低毛利零售、工资和租金影响",
+          "sources": [
+            "https://alfamart.co.id/investor-area/laporan-keuangan?lang=id"
+          ],
+          "currency": "IDR",
+          "timezone": "Asia/Jakarta",
+          "market": "XIDX",
+          "stooq": "amrt.jk",
+          "selection_market_cap_usd": 3008960398,
+          "selection_market_cap_time": "2026-09-25T08:49:57+00:00",
+          "selection_average_turnover_usd": 2651446
+        },
+        {
+          "ticker": "ICBP.JK",
+          "group": "goods",
+          "name": "Indofood CBP",
+          "business": "方便面、乳品、零食及饮料",
+          "limitations": "印尼为主，Pinehill中东非洲业务亦重要",
+          "sources": [
+            "https://www.indofoodcbp.com/menu/financial-press-releases/icbps-first-semester-2025-financial-results"
+          ],
+          "currency": "IDR",
+          "timezone": "Asia/Jakarta",
+          "market": "XIDX",
+          "stooq": "icbp.jk",
+          "selection_market_cap_usd": 4351215046,
+          "selection_market_cap_time": "2026-09-25T08:49:17+00:00",
+          "selection_average_turnover_usd": 1654297
+        },
+        {
+          "ticker": "7084.KL",
+          "group": "goods",
+          "name": "QL资源",
+          "business": "禽蛋、水产食品及FamilyMart便利店",
+          "limitations": "棕榈油及清洁能源附带业务，不是纯食品零售",
+          "sources": [
+            "https://ql.listedcompany.com/misc/FlippingBook_PDF_Publisher/Publications/HTML/QL_2025/210-211/"
+          ],
+          "currency": "MYR",
+          "timezone": "Asia/Kuala_Lumpur",
+          "market": "XKLS",
+          "stooq": "7084.kl",
+          "selection_market_cap_usd": 3586613615,
+          "selection_market_cap_time": "2026-09-25T08:44:39+00:00",
+          "selection_average_turnover_usd": 1747964
+        },
+        {
+          "ticker": "VNM.VN",
+          "group": "goods",
+          "name": "Vinamilk",
+          "business": "越南乳品及营养食品",
+          "limitations": "国内需求为主，也有出口",
+          "sources": [
+            "https://www.vinamilk.com.vn/"
+          ],
+          "currency": "VND",
+          "timezone": "Asia/Bangkok",
+          "market": "VN",
+          "stooq": "vnm.vn",
+          "selection_market_cap_usd": 4808747104,
+          "selection_market_cap_time": "2026-09-25T07:45:22+00:00",
+          "selection_average_turnover_usd": 9157580
+        },
+        {
+          "ticker": "MWG.VN",
+          "group": "goods",
+          "name": "Mobile World",
+          "business": "越南手机家电及食品杂货零售",
+          "limitations": "耐用品与食品需求混合，零售不是AI硬件生产",
+          "sources": [
+            "https://mwg.vn/eng/"
+          ],
+          "currency": "VND",
+          "timezone": "Asia/Bangkok",
+          "market": "VN",
+          "stooq": "mwg.vn",
+          "selection_market_cap_usd": 4147067648,
+          "selection_market_cap_time": "2026-09-25T07:45:13+00:00",
+          "selection_average_turnover_usd": 10264178
+        },
+        {
+          "ticker": "UNTR.JK",
+          "group": "business",
+          "name": "United Tractors",
+          "business": "矿业承包、重型机械销售及煤金矿",
+          "limitations": "商品价格暴露较大：设备约28%、矿业承包约41%收入（2025）",
+          "sources": [
+            "https://www.unitedtractors.com/en/united-tractors-recorded-net-income-of-rp14-8-trillion-in-2025/"
+          ],
+          "currency": "IDR",
+          "timezone": "Asia/Jakarta",
+          "market": "XIDX",
+          "stooq": "untr.jk",
+          "selection_market_cap_usd": 4734908757,
+          "selection_market_cap_time": "2026-09-25T08:49:57+00:00",
+          "selection_average_turnover_usd": 5734327
+        },
+        {
+          "ticker": "SCC.BK",
+          "group": "business",
+          "name": "Siam Cement",
+          "business": "水泥建材、化工与包装",
+          "limitations": "石化景气和项目投产影响利润；与SCGP有母子重叠",
+          "sources": [
+            "https://www.scg.com/en/"
+          ],
+          "currency": "THB",
+          "timezone": "Asia/Bangkok",
+          "market": "XBKK",
+          "stooq": "scc.bk",
+          "selection_market_cap_usd": 9507803454,
+          "selection_market_cap_time": "2026-09-25T08:32:47+00:00",
+          "selection_average_turnover_usd": 35547925
+        },
+        {
+          "ticker": "5246.KL",
+          "group": "business",
+          "name": "Westports",
+          "business": "马来西亚集装箱及散杂货港口",
+          "limitations": "贸易物流及港口投资，替代数据中心暴露较高的IJM",
+          "sources": [
+            "https://www.westportsholdings.com/quarterly-reports/"
+          ],
+          "currency": "MYR",
+          "timezone": "Asia/Kuala_Lumpur",
+          "market": "XKLS",
+          "stooq": "5246.kl",
+          "selection_market_cap_usd": 5647251954,
+          "selection_market_cap_time": "2026-09-25T08:56:23+00:00",
+          "selection_average_turnover_usd": 7129803
+        },
+        {
+          "ticker": "SCGP.BK",
+          "group": "business",
+          "name": "SCG Packaging",
+          "business": "东南亚纸包装及一体化包装服务",
+          "limitations": "包装需求偏工业消费交界；SCC持股导致部分重叠",
+          "sources": [
+            "https://investor.scgpackaging.com/en"
+          ],
+          "currency": "THB",
+          "timezone": "Asia/Bangkok",
+          "market": "XBKK",
+          "stooq": "scgp.bk",
+          "selection_market_cap_usd": 3929593767,
+          "selection_market_cap_time": "2026-09-25T08:35:07+00:00",
+          "selection_average_turnover_usd": 10607103
+        },
+        {
+          "ticker": "HPG.VN",
+          "group": "business",
+          "name": "和发集团",
+          "business": "钢铁、钢制品及相关制造",
+          "limitations": "钢铁为主要收入利润，兼农业和地产",
+          "sources": [
+            "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/01/quarter-summary-4q-2025.pdf"
+          ],
+          "currency": "VND",
+          "timezone": "Asia/Bangkok",
+          "market": "VN",
+          "stooq": "hpg.vn",
+          "selection_market_cap_usd": 6098436680,
+          "selection_market_cap_time": "2026-09-25T07:45:11+00:00",
+          "selection_average_turnover_usd": 16701253
+        },
+        {
+          "ticker": "GMD.VN",
+          "group": "business",
+          "name": "Gemadept",
+          "business": "越南港口及物流",
+          "limitations": "国内投资和全球贸易共同影响",
+          "sources": [
+            "https://www.gemadept.com.vn/en/gemadept-building-infrastructure-securing-industry-leadership/"
+          ],
+          "currency": "VND",
+          "timezone": "Asia/Bangkok",
+          "market": "VN",
+          "stooq": "gmd.vn",
+          "selection_market_cap_usd": 1270131596,
+          "selection_market_cap_time": "2026-09-25T07:45:09+00:00",
+          "selection_average_turnover_usd": 3634533
+        },
+        {
+          "ticker": "5E2.SI",
+          "group": "business",
+          "name": "Seatrium",
+          "business": "海工平台、船舶建造改造与维修",
+          "limitations": "全球油气及海工订单为主，非新加坡国内投资",
+          "sources": [
+            "https://seatrium.com/"
+          ],
+          "currency": "SGD",
+          "timezone": "Asia/Singapore",
+          "market": "XSES",
+          "stooq": "5e2.si",
+          "selection_market_cap_usd": 5542919347,
+          "selection_market_cap_time": "2026-09-25T08:55:12+00:00",
+          "selection_average_turnover_usd": 25430423
+        },
+        {
+          "ticker": "PGAS.JK",
+          "group": "business",
+          "name": "印尼天然气公司",
+          "business": "天然气销售、输配及上游配套",
+          "limitations": "工业能源需求和气源政策影响，不是电力设备",
+          "sources": [
+            "https://ir.pgn.co.id/financial-information?AnnualReports="
+          ],
+          "currency": "IDR",
+          "timezone": "Asia/Jakarta",
+          "market": "XIDX",
+          "stooq": "pgas.jk",
+          "selection_market_cap_usd": 1924144345,
+          "selection_market_cap_time": "2026-09-25T08:49:58+00:00",
+          "selection_average_turnover_usd": 2672624
+        },
+        {
+          "ticker": "U14.SI",
+          "group": "housing",
+          "name": "UOL",
+          "business": "住宅开发、商业地产及酒店",
+          "limitations": "新加坡为主，兼境外酒店和租金收入",
+          "sources": [
+            "https://www.uol.com.sg/wp-content/uploads/uol-financial-results/FY2025_Financial_Results.pdf"
+          ],
+          "currency": "SGD",
+          "timezone": "Asia/Singapore",
+          "market": "XSES",
+          "stooq": "u14.si",
+          "selection_market_cap_usd": 5604087669,
+          "selection_market_cap_time": "2026-09-25T08:52:41+00:00",
+          "selection_average_turnover_usd": 12886179
+        },
+        {
+          "ticker": "C09.SI",
+          "group": "housing",
+          "name": "城市发展CDL",
+          "business": "住宅开发、投资物业及酒店",
+          "limitations": "海外酒店及地产较多，个别公司治理事件影响",
+          "sources": [
+            "https://www.cdl.com.sg/annual-reports/2025/"
+          ],
+          "currency": "SGD",
+          "timezone": "Asia/Singapore",
+          "market": "XSES",
+          "stooq": "c09.si",
+          "selection_market_cap_usd": 5789368956,
+          "selection_market_cap_time": "2026-09-25T08:52:38+00:00",
+          "selection_average_turnover_usd": 12224235
+        },
+        {
+          "ticker": "LH.BK",
+          "group": "housing",
+          "name": "Land and Houses",
+          "business": "泰国住宅开发、投资物业及联营收益",
+          "limitations": "含商业物业、海外资产及投资收益",
+          "sources": [
+            "https://www.lh.co.th/"
+          ],
+          "currency": "THB",
+          "timezone": "Asia/Bangkok",
+          "market": "XBKK",
+          "stooq": "lh.bk",
+          "selection_market_cap_usd": 1305430984,
+          "selection_market_cap_time": "2026-09-25T08:34:27+00:00",
+          "selection_average_turnover_usd": 2920608
+        },
+        {
+          "ticker": "SPALI.BK",
+          "group": "housing",
+          "name": "Supalai",
+          "business": "泰国住宅、公寓及澳洲开发",
+          "limitations": "澳洲业务和交付节奏影响",
+          "sources": [
+            "https://www.supalai.com/en/news/supalai-financial-results-2025"
+          ],
+          "currency": "THB",
+          "timezone": "Asia/Bangkok",
+          "market": "XBKK",
+          "stooq": "spali.bk",
+          "selection_market_cap_usd": 924703478,
+          "selection_market_cap_time": "2026-09-25T08:26:56+00:00",
+          "selection_average_turnover_usd": 2492149
+        },
+        {
+          "ticker": "8664.KL",
+          "group": "housing",
+          "name": "S P Setia",
+          "business": "马来西亚住宅城镇及综合地产开发",
+          "limitations": "土地出售及英国澳洲项目也影响利润",
+          "sources": [
+            "https://spsetia.com/wp-content/uploads/2026/03/S_P_Setia_Berhad_IR2025.pdf"
+          ],
+          "currency": "MYR",
+          "timezone": "Asia/Kuala_Lumpur",
+          "market": "XKLS",
+          "stooq": "8664.kl",
+          "selection_market_cap_usd": 967906232,
+          "selection_market_cap_time": "2026-09-25T08:50:05+00:00",
+          "selection_average_turnover_usd": 801398
+        },
+        {
+          "ticker": "KDH.VN",
+          "group": "housing",
+          "name": "Khang Dien",
+          "business": "越南住宅开发销售",
+          "limitations": "胡志明市区域集中，项目交付利润不平滑",
+          "sources": [
+            "https://www.khangdien.com.vn/en/shareholders-investors/reports-prospectus/annual-reports"
+          ],
+          "currency": "VND",
+          "timezone": "Asia/Bangkok",
+          "market": "VN",
+          "stooq": "kdh.vn",
+          "selection_market_cap_usd": 677905877,
+          "selection_market_cap_time": "2026-09-25T07:45:12+00:00",
+          "selection_average_turnover_usd": 2810248
+        },
+        {
+          "ticker": "VHM.VN",
+          "group": "housing",
+          "name": "Vinhomes",
+          "business": "越南大型住宅及城镇开发",
+          "limitations": "大宗转让、集团关联交易和项目节奏影响",
+          "sources": [
+            "https://vinhomes.vn/en/taxonomy/term/2124"
+          ],
+          "currency": "VND",
+          "timezone": "Asia/Bangkok",
+          "market": "VN",
+          "stooq": "vhm.vn",
+          "selection_market_cap_usd": 21840875440,
+          "selection_market_cap_time": "2026-09-25T07:45:20+00:00",
+          "selection_average_turnover_usd": 22506088
+        },
+        {
+          "ticker": "BSDE.JK",
+          "group": "housing",
+          "name": "BSD City",
+          "business": "印尼城镇住宅、土地及商业物业",
+          "limitations": "兼商业地产，土地批售影响利润",
+          "sources": [
+            "https://www.bsdcity.com/investor/public-expose/"
+          ],
+          "currency": "IDR",
+          "timezone": "Asia/Jakarta",
+          "market": "XIDX",
+          "stooq": "bsde.jk",
+          "selection_market_cap_usd": 654639536,
+          "selection_market_cap_time": "2026-09-25T08:49:56+00:00",
+          "selection_average_turnover_usd": 696629
+        },
+        {
+          "ticker": "D05.SI",
+          "group": "banks",
+          "name": "星展银行",
+          "business": "存贷利差、财富管理及交易业务",
+          "limitations": "新加坡香港为核心，兼其他亚洲市场",
+          "sources": [
+            "https://www.dbs.com/annualreports/2025/index.html"
+          ],
+          "currency": "SGD",
+          "timezone": "Asia/Singapore",
+          "market": "XSES",
+          "stooq": "d05.si",
+          "selection_market_cap_usd": 173589192784,
+          "selection_market_cap_time": "2026-09-25T08:52:51+00:00",
+          "selection_average_turnover_usd": 249507082
+        },
+        {
+          "ticker": "O39.SI",
+          "group": "banks",
+          "name": "华侨银行",
+          "business": "银行、财富管理及Great Eastern保险",
+          "limitations": "新加坡马来西亚及大中华，保险收入亦重要",
+          "sources": [
+            "https://www.ocbc.com/group/media/release/2025/ocbc-group-full-year-2025.page"
+          ],
+          "currency": "SGD",
+          "timezone": "Asia/Singapore",
+          "market": "XSES",
+          "stooq": "o39.si",
+          "selection_market_cap_usd": 112619569144,
+          "selection_market_cap_time": "2026-09-25T08:52:46+00:00",
+          "selection_average_turnover_usd": 155594301
+        },
+        {
+          "ticker": "U11.SI",
+          "group": "banks",
+          "name": "大华银行",
+          "business": "东南亚零售、企业银行及财富管理",
+          "limitations": "多个东南亚市场的信用周期",
+          "sources": [
+            "https://www.uobgroup.com/AR2025/index.html"
+          ],
+          "currency": "SGD",
+          "timezone": "Asia/Singapore",
+          "market": "XSES",
+          "stooq": "u11.si",
+          "selection_market_cap_usd": 55001481636,
+          "selection_market_cap_time": "2026-09-25T08:52:45+00:00",
+          "selection_average_turnover_usd": 112368642
+        },
+        {
+          "ticker": "1155.KL",
+          "group": "banks",
+          "name": "马来亚银行",
+          "business": "商业银行、伊斯兰金融及保险",
+          "limitations": "马来西亚为主，兼新加坡印尼",
+          "sources": [
+            "https://www.maybank.com/"
+          ],
+          "currency": "MYR",
+          "timezone": "Asia/Kuala_Lumpur",
+          "market": "XKLS",
+          "stooq": "1155.kl",
+          "selection_market_cap_usd": 30305797173,
+          "selection_market_cap_time": "2026-09-25T08:44:53+00:00",
+          "selection_average_turnover_usd": 35478801
+        },
+        {
+          "ticker": "1295.KL",
+          "group": "banks",
+          "name": "大众银行",
+          "business": "马来西亚零售、中小企业及住房贷款",
+          "limitations": "区域银行，兼香港及其他市场",
+          "sources": [
+            "https://www.publicbankgroup.com/investor-relations/annual-reports/"
+          ],
+          "currency": "MYR",
+          "timezone": "Asia/Kuala_Lumpur",
+          "market": "XKLS",
+          "stooq": "1295.kl",
+          "selection_market_cap_usd": 22886594131,
+          "selection_market_cap_time": "2026-09-25T08:44:56+00:00",
+          "selection_average_turnover_usd": 26052875
+        },
+        {
+          "ticker": "5819.KL",
+          "group": "banks",
+          "name": "丰隆银行",
+          "business": "商业银行、零售及企业金融",
+          "limitations": "联营成都银行利润带来区外影响",
+          "sources": [
+            "https://www.hlb.com.my/en/personal-banking/news-updates/hlb-announces-fy2025-results.html"
+          ],
+          "currency": "MYR",
+          "timezone": "Asia/Kuala_Lumpur",
+          "market": "XKLS",
+          "stooq": "5819.kl",
+          "selection_market_cap_usd": 11654942844,
+          "selection_market_cap_time": "2026-09-25T08:44:51+00:00",
+          "selection_average_turnover_usd": 4372215
+        },
+        {
+          "ticker": "BBCA.JK",
+          "group": "banks",
+          "name": "中亚银行",
+          "business": "印尼企业、零售及交易结算银行",
+          "limitations": "存款成本、信贷及债券投资影响",
+          "sources": [
+            "https://www.bca.co.id/en/tentang-bca/Hubungan-Investor/laporan-presentasi/Laporan-Keuangan"
+          ],
+          "currency": "IDR",
+          "timezone": "Asia/Jakarta",
+          "market": "XIDX",
+          "stooq": "bbca.jk",
+          "selection_market_cap_usd": 42743987480,
+          "selection_market_cap_time": "2026-09-25T08:49:59+00:00",
+          "selection_average_turnover_usd": 47776069
+        },
+        {
+          "ticker": "BBRI.JK",
+          "group": "banks",
+          "name": "印尼人民银行",
+          "business": "微型、小企业及零售信贷",
+          "limitations": "小微贷款信用成本较重要",
+          "sources": [
+            "https://www.ir-bri.com/"
+          ],
+          "currency": "IDR",
+          "timezone": "Asia/Jakarta",
+          "market": "XIDX",
+          "stooq": "bbri.jk",
+          "selection_market_cap_usd": 26428466585,
+          "selection_market_cap_time": "2026-09-25T08:49:59+00:00",
+          "selection_average_turnover_usd": 37513073
+        },
+        {
+          "ticker": "BBNI.JK",
+          "group": "banks",
+          "name": "印尼国家银行",
+          "business": "印尼企业、零售及国际银行",
+          "limitations": "企业信贷与政策环境影响",
+          "sources": [
+            "https://www.bni.co.id/en-us/investors/financial-reports"
+          ],
+          "currency": "IDR",
+          "timezone": "Asia/Jakarta",
+          "market": "XIDX",
+          "stooq": "bbni.jk",
+          "selection_market_cap_usd": 7288921041,
+          "selection_market_cap_time": "2026-09-25T08:49:57+00:00",
+          "selection_average_turnover_usd": 8334202
+        },
+        {
+          "ticker": "KBANK.BK",
+          "group": "banks",
+          "name": "开泰银行",
+          "business": "泰国零售、中小企业及企业金融",
+          "limitations": "地区信贷、利差和信用成本",
+          "sources": [
+            "https://www.kasikornbank.com/en/ir/FinanInfoReports/financialReports/y2025-onereport-en.pdf"
+          ],
+          "currency": "THB",
+          "timezone": "Asia/Bangkok",
+          "market": "XBKK",
+          "stooq": "kbank.bk",
+          "selection_market_cap_usd": 17919285208,
+          "selection_market_cap_time": "2026-09-25T08:32:29+00:00",
+          "selection_average_turnover_usd": 104033777
+        },
+        {
+          "ticker": "TISCO.BK",
+          "group": "banks",
+          "name": "TISCO",
+          "business": "汽车及零售信贷、企业贷款和财富管理",
+          "limitations": "汽车融资集中，补充大银行以外的信用需求",
+          "sources": [
+            "https://www.tisco.co.th/wp-content/uploads/MDA-2025E.pdf"
+          ],
+          "currency": "THB",
+          "timezone": "Asia/Bangkok",
+          "market": "XBKK",
+          "stooq": "tisco.bk",
+          "selection_market_cap_usd": 3063915714,
+          "selection_market_cap_time": "2026-09-25T08:32:04+00:00",
+          "selection_average_turnover_usd": 14011026
+        },
+        {
+          "ticker": "VCB.VN",
+          "group": "banks",
+          "name": "越南外贸银行",
+          "business": "企业、贸易结算及零售银行",
+          "limitations": "本地信贷及出口贸易金融",
+          "sources": [
+            "https://www.vietcombank.com.vn/Trang-thong-tin-dien-tu/Articles/2026/01/09/20250109_VNL_Vietcombank-tong-ket-HD-nam-2025-dinh-huong-2026"
+          ],
+          "currency": "VND",
+          "timezone": "Asia/Bangkok",
+          "market": "VN",
+          "stooq": "vcb.vn",
+          "selection_market_cap_usd": 18646754306,
+          "selection_market_cap_time": "2026-09-25T07:45:19+00:00",
+          "selection_average_turnover_usd": 10135512
+        }
+      ]
+    }
+  ]
 }

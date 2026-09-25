@@ -1,22 +1,24 @@
-<div id="us-basket-history">
+<nav class="viz-row" aria-label="地区导航" data-region-nav></nav>
+<div id="us-basket-history" class="basket-history">
   <style>
-    #us-basket-history { color:var(--foreground); }
-    #us-basket-history .bh-controls { margin:8px 0 16px; }
-    #us-basket-history .bh-panel { margin:18px 0 24px; }
-    #us-basket-history .bh-legend { display:flex;flex-wrap:wrap;gap:10px 16px;margin:8px 0; }
-    #us-basket-history .bh-series { appearance:none;background:transparent;border:0;padding:0;color:var(--foreground);font:inherit;display:inline-flex;align-items:center;gap:5px; }
-    #us-basket-history .bh-swatch { display:inline-block;width:16px;height:3px; }
-    #us-basket-history .bh-chart { display:block;width:100%;overflow:visible; }
-    #us-basket-history .bh-chart text { fill:var(--foreground);font-size:12px; }
-    #us-basket-history .bh-chart .domain,#us-basket-history .bh-chart .tick line { stroke:var(--border); }
-    #us-basket-history .bh-plot { position:relative; }
-    #us-basket-history .tooltip { position:absolute;pointer-events:none;z-index:2;background:var(--popover);color:var(--popover-foreground);padding:8px; }
-    #us-basket-history .bh-tip-row { display:flex;justify-content:space-between;gap:20px; }
-    #us-basket-history .bh-note { margin:10px 0; }
+    .basket-history { color:var(--foreground); }
+    .basket-history .bh-controls { margin:8px 0 16px; }
+    .basket-history .bh-panel { margin:18px 0 24px; }
+    .basket-history .bh-legend { display:flex;flex-wrap:wrap;gap:10px 16px;margin:8px 0; }
+    .basket-history .bh-series { appearance:none;background:transparent;border:0;padding:0;color:var(--foreground);font:inherit;display:inline-flex;align-items:center;gap:5px; }
+    .basket-history .bh-swatch { display:inline-block;width:16px;height:3px; }
+    .basket-history .bh-chart { display:block;width:100%;overflow:visible; }
+    .basket-history .bh-chart text { fill:var(--foreground);font-size:12px; }
+    .basket-history .bh-chart .domain,.basket-history .bh-chart .tick line { stroke:var(--border); }
+    .basket-history .bh-plot { position:relative; }
+    .basket-history .tooltip { position:absolute;pointer-events:none;z-index:2;background:var(--popover);color:var(--popover-foreground);padding:8px; }
+    .basket-history .bh-tip-row { display:flex;justify-content:space-between;gap:20px; }
+    .basket-history .bh-note { margin:10px 0; }
   </style>
-  <h3>美国各经济板块股票表现</h3>
+  <h3 data-title>美国各经济板块股票表现</h3>
   <div class="text-small" data-asof></div>
   <div class="text-small" data-quality></div>
+  <div class="text-small" data-region-note></div>
   <div class="viz-controls bh-controls">
     <label class="form-label">观察区间
       <select class="form-select" data-range aria-label="观察区间">
@@ -26,8 +28,8 @@
   <div class="text-small" data-history-note hidden></div>
   <div data-panels></div>
   <div class="tooltip" role="tooltip" hidden></div>
-  <div class="text-small bh-note">每日等权收益 · 所选区间起点＝100 · 美元复权收盘价 · 未扣交易成本</div>
-  <div class="text-small">S&amp;P 500虚线为价格指数（不含股息）；篮子含分红复权。当前名单回溯，存在选择偏差。数据：Yahoo Finance，进门补缺。</div>
+  <div class="text-small bh-note" data-currency></div>
+  <div class="text-small">S&amp;P 500虚线为美国价格指数（不含股息），只作美国市场参考，不是当地市场基准；篮子含分红复权，不能直接当作超额总回报比较。当前名单回溯有选择偏差。数据：Yahoo Finance；补缺尝试与占位另有审计。</div>
   <details><summary>成分股与计算口径</summary><div data-constituents></div>
     <p class="text-small">每天用全部成分股当日收益的算术平均作为篮子收益，再逐日连乘；涨得多的股票不会自动获得更大次日权重。非日内连续调仓模拟。</p>
   </details>
@@ -35,15 +37,27 @@
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 <script>
 (() => {
-  const root=document.getElementById('us-basket-history');
-  const data=__BASKET_DATA__;
+  const payload=__BASKET_DATA__;
+  const reports=payload.reports||[payload];
+  const original=document.getElementById('us-basket-history');
+  const template=original.cloneNode(true);
+  const nav=document.querySelector('[data-region-nav]');
+  reports.forEach((data,reportIndex)=>{
+  const root=reportIndex===0?original:template.cloneNode(true);
+  const region=data.region||'us';
+  root.id='baskets-'+region;
+  if(reportIndex)original.parentNode.append(root);
+  const link=document.createElement('a');link.href='#'+root.id;link.textContent=data.region_name||'美国';nav.append(link);
+  root.querySelector('[data-title]').textContent=data.title||'美国各经济板块股票表现';
+  root.querySelector('[data-region-note]').textContent=data.region_note||'';
+  root.querySelector('[data-currency]').textContent='每日等权收益 · 所选区间起点＝100 · '+(data.currency_note||'美元复权收盘价')+' · 未扣交易成本';
   const dates=data.dates.map(d=>new Date(d+'T00:00:00Z'));
   const range=root.querySelector('[data-range]');
   const tooltip=root.querySelector('[role="tooltip"]');
   root.style.position='relative';
   root.querySelector('[data-asof]').textContent='截至 '+data.as_of+' · 统一历史起点 '+data.dates[0]+' · '+data.series.length+' 个篮子 · '+data.series.reduce((s,g)=>s+g.tickers.length,0)+' 只股票';
   root.querySelector('[data-quality]').textContent='缺数沿用前值：已开启 · 本次 '+data.carried_days+' 个篮子日沿用前值';
-  const panels=[{id:'economy',name:'传统板块4个＋银行1个'},{id:'ai',name:'AI · 四个观察篮子'}];
+  const panels=data.panels||[{id:'economy',name:'传统板块4个＋银行1个'},{id:'ai',name:'AI · 四个观察篮子'}];
   const hidden=new Set();
   const plotNodes=[];
   const periods=data.chart.period_months.map(String);
@@ -51,16 +65,22 @@
   let months=String(data.chart.default_months);
   let pinned=false;
   function restore(state){
-    const s=state?.privateContent;
+    const saved=state?.privateContent;
+    const s=saved?.region===region?saved:null;
     if(s){if(periods.includes(String(s.months)))months=String(s.months);hidden.clear();(s.hidden||[]).forEach(id=>hidden.add(id));}
     range.value=months;
   }
   restore(window.openai?.widgetState);
-  function save(){if(window.openai?.setWidgetState)window.openai.setWidgetState({modelContent:{periodMonths:Number(months),asOf:data.as_of},privateContent:{months,hidden:[...hidden]}}).catch(()=>{});}
+  function save(){if(window.openai?.setWidgetState)window.openai.setWidgetState({modelContent:{periodMonths:Number(months),asOf:data.as_of},privateContent:{region,months,hidden:[...hidden]}}).catch(()=>{});}
   function money(v){return d3.format('.2f')(v);}
   function hideTip(){tooltip.hidden=true;root.querySelectorAll('[data-chart-hover-guide],[data-chart-hover-marker]').forEach(n=>n.setAttribute('visibility','hidden'));}
   const names=root.querySelector('[data-constituents]');
-  data.series.forEach(g=>{const p=document.createElement('p');p.className='text-small';p.textContent=g.name+'（'+g.tickers.length+'只）：'+g.tickers.join(' · ');names.append(p);});
+  data.series.forEach(g=>{
+    const p=document.createElement('p');p.className='text-small';p.textContent=g.name+'（'+g.tickers.length+'只）：'+g.tickers.join(' · ');names.append(p);
+    if(g.members){const list=document.createElement('ul');list.className='text-small';
+      g.members.forEach(m=>{const item=document.createElement('li');item.textContent=m.name+'（'+m.ticker+'）：'+m.business+'。边界：'+m.limitations+'。';
+        const a=document.createElement('a');a.href=m.sources[0];a.target='_blank';a.rel='noopener noreferrer';a.textContent='公司资料';item.append(a);list.append(item);});names.append(list);}
+  });
   panels.forEach(panel=>{
     const section=document.createElement('section');section.className='bh-panel';
     const heading=document.createElement('h3');heading.textContent=panel.name;section.append(heading);
@@ -144,5 +164,6 @@
   window.addEventListener('openai:set_globals',event=>{if(event.detail?.globals?.widgetState){restore(event.detail.globals.widgetState);drawAll();}});
   new ResizeObserver(drawAll).observe(root);
   drawAll();
+  });
 })();
 </script>

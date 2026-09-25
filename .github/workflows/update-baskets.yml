@@ -23,7 +23,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -32,6 +32,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install pinned exchange calendars
+        run: pip install -r .automation/requirements.txt
+      - name: Verify regional calendar and calculation rules
+        run: python .automation/scripts/check_regions.py
       - name: Verify calculation rules
         run: python .automation/scripts/check_math.py
       - name: Fetch and audit closing prices
@@ -75,6 +79,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: price-audit-${{ github.run_id }}
-          path: '.build/runs/'
+          path: |
+            .build/runs/
+            .build/regions/
           retention-days: 14
           if-no-files-found: warn

@@ -1,10 +1,40 @@
 {
   "as_of": "2026-09-24",
   "history_start": "2024-03-27",
-  "config_hash": "ab7f7c4cebd5a8fa6d2b2fdb6ee7437b6555837bb8ce69f7706f9951e701abee",
-  "html_sha256": "a1a8f5ed3c17fcd963f2ab42ba4c54bebdd9b9d0ba4f277b85ca57bf4fb084f3",
-  "baskets": 9,
-  "stocks": 89,
-  "carried_days": 0,
+  "config_hash": "fdc802993dfe150c92f439a102616661f23ac1d4bac0daf94de0f790e81051e6",
+  "html_sha256": "c9cadb02cfa4da1a295e2274693ebdb734268f463723f2db973293f5d5ccfed2",
+  "baskets": 24,
+  "stocks": 221,
+  "regions": [
+    {
+      "id": "us",
+      "as_of": "2026-09-24",
+      "baskets": 9,
+      "stocks": 89,
+      "carried_days": 0
+    },
+    {
+      "id": "europe",
+      "as_of": "2026-09-24",
+      "baskets": 5,
+      "stocks": 44,
+      "carried_days": 1
+    },
+    {
+      "id": "japan",
+      "as_of": "2026-09-24",
+      "baskets": 5,
+      "stocks": 44,
+      "carried_days": 0
+    },
+    {
+      "id": "southeast_asia",
+      "as_of": "2026-09-24",
+      "baskets": 5,
+      "stocks": 44,
+      "carried_days": 0
+    }
+  ],
+  "carried_days": 1,
   "url": "https://zhuoran787.github.io/us-economy-baskets/"
 }
