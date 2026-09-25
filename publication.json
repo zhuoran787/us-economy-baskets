@@ -1,8 +1,8 @@
 {
   "as_of": "2026-09-24",
   "history_start": "2024-03-27",
-  "config_hash": "2811151a5e2387d50c92dbb2a0da14f09917b7a0dcae0558ef736c29c5ee46a1",
-  "html_sha256": "c1389819e4cc4e5c9550ef651a88977d20b543d9586559a293f4303ee111bd22",
+  "config_hash": "ab7f7c4cebd5a8fa6d2b2fdb6ee7437b6555837bb8ce69f7706f9951e701abee",
+  "html_sha256": "a1a8f5ed3c17fcd963f2ab42ba4c54bebdd9b9d0ba4f277b85ca57bf4fb084f3",
   "baskets": 9,
   "stocks": 89,
   "carried_days": 0,
