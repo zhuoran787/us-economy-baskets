@@ -1,0 +1,14 @@
+{
+  "ticker": "ONB",
+  "requested_end": "2026-09-23",
+  "retrieved_at": "2026-09-24T14:14:23.047Z",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"code\":200,\"msg\":\"success\",\"data\":{\"standardized_info\":{\"stock_full_code\":\"usONB\",\"stock_code\":\"ONB\",\"stock_name\":\"Old National Bancorp\",\"market_type\":\"us\",\"currency\":\"USD\"},\"meta\":{\"freq\":\"1d\",\"freq_type\":\"period\",\"source_table\":\"ads_stock_kline_us_day\",\"startDateTime\":\"2026-09-18 00:00:00\",\"endDateTime\":\"2026-09-23 23:59:59\",\"order\":\"asc\",\"limit\":20,\"fields\":[\"stock_code\",\"period_end_date\",\"close_price\",\"front_adjust_close_price\"],\"adjust\":\"none\"},\"bars\":[{\"stock_code\":\"ONB\",\"period_end_date\":\"2026-09-18\",\"close_price\":25.270000,\"front_adjust_close_price\":25.270000},{\"stock_code\":\"ONB\",\"period_end_date\":\"2026-09-21\",\"close_price\":25.250000,\"front_adjust_close_price\":25.250000},{\"stock_code\":\"ONB\",\"period_end_date\":\"2026-09-22\",\"close_price\":25.030000,\"front_adjust_close_price\":25.030000},{\"stock_code\":\"ONB\",\"period_end_date\":\"2026-09-23\",\"close_price\":24.740000,\"front_adjust_close_price\":24.740000}]},\"failed_query\":null}"
+      }
+    ],
+    "isError": false
+  }
+}

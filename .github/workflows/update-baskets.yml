@@ -1,0 +1,80 @@
+name: Update stock baskets
+on:
+  schedule:
+    - cron: '30 17 * * 1-5'
+      timezone: 'America/New_York'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.automation/**'
+      - '.github/workflows/update-baskets.yml'
+      - 'index.html'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: baskets-publication
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify calculation rules
+        run: python .automation/scripts/check_math.py
+      - name: Fetch and audit closing prices
+        run: python .automation/scripts/cloud_refresh.py
+      - name: Save the updated page
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html publication.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update audited stock basket chart'
+            git push origin HEAD:main
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.site'
+      - id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Verify public HTML
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import time, urllib.request, os
+          url='${{ steps.deployment.outputs.page_url }}'
+          expected=Path('.site/index.html').read_bytes()
+          for attempt in range(6):
+              try:
+                  request=urllib.request.Request(url+'?run='+os.environ['GITHUB_RUN_ID'],headers={'Cache-Control':'no-cache'})
+                  if urllib.request.urlopen(request,timeout=30).read()==expected:
+                      print('Public HTML matches audited build')
+                      break
+              except Exception as exc:
+                  print(type(exc).__name__)
+              time.sleep(10)
+          else:
+              raise SystemExit('Published HTML did not match the current build')
+          PY
+      - name: Preserve source receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: price-audit-${{ github.run_id }}
+          path: '.build/runs/'
+          retention-days: 14
+          if-no-files-found: warn

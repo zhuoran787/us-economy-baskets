@@ -1,0 +1,356 @@
+{
+  "version": 5,
+  "selection_date": "2026-09-24",
+  "output_dir": ".build",
+  "history_start": "2024-03-27",
+  "price_field": "adjclose",
+  "source": "yahoo_chart",
+  "rebalance": "daily_equal_weight_returns",
+  "base": 100,
+  "groups": [
+    {
+      "id": "services",
+      "name": "服务消费",
+      "panel": "economy",
+      "tickers": [
+        "HCA",
+        "MAA",
+        "DRI",
+        "DAL",
+        "SCI",
+        "VZ",
+        "DGX",
+        "THC",
+        "UDR",
+        "TXRH",
+        "MAR",
+        "ROL"
+      ],
+      "boundary": "医疗、租赁、餐饮、出行、通信和生活服务；按主营业务定性筛查，未披露统一AI收入比例，不等于GDP服务消费。ROL含商业客户，SCI含墓地及信托收益。"
+    },
+    {
+      "id": "goods",
+      "name": "商品消费",
+      "panel": "economy",
+      "tickers": [
+        "WMT",
+        "COST",
+        "KR",
+        "BBY",
+        "GM",
+        "WSM",
+        "TGT",
+        "TJX",
+        "PG",
+        "PEP",
+        "ORLY",
+        "KMB"
+      ],
+      "boundary": "终端居民商品需求为主；未见AI基础设施销售成为主营业务，BBY含AI终端产品。PEP、PG、KMB仍有海外收入，不能按美国消费总量解释。"
+    },
+    {
+      "id": "business",
+      "name": "企业投资",
+      "panel": "economy",
+      "tickers": [
+        "DE",
+        "PCAR",
+        "ITW",
+        "LECO",
+        "SNA",
+        "WAB",
+        "GGG",
+        "ROK"
+      ],
+      "boundary": "传统设备、自动化、铁路和维修工具；含耗材、售后、融资、公共交通及海外业务。AI最终订单未统一单列，ROK、ITW等不能量化认证零AI。"
+    },
+    {
+      "id": "housing",
+      "name": "住宅投资",
+      "panel": "economy",
+      "tickers": [
+        "DHI",
+        "LEN",
+        "PHM",
+        "TOL",
+        "NVR",
+        "LOW",
+        "MAS",
+        "BLDR"
+      ],
+      "boundary": "美国新房开发、住宅建材与翻新；LOW日常维护和家电等不全属于住宅固定投资，不能精确复制GDP口径。"
+    },
+    {
+      "id": "banks",
+      "name": "银行与信用",
+      "panel": "economy",
+      "tickers": [
+        "JPM",
+        "BAC",
+        "WFC",
+        "USB",
+        "PNC",
+        "TFC",
+        "FITB",
+        "RF",
+        "UBSI",
+        "ONB",
+        "HWC",
+        "ABCB",
+        "HOMB",
+        "BOKF",
+        "APO",
+        "BX",
+        "KKR",
+        "ARES"
+      ],
+      "boundary": "大银行、KRE主要区域银行与另类资产管理机构共同观察信用条件；银行利润来自净利息、手续费与拨备，另类资管来自管理费、业绩报酬、投资收益及部分保险利差。含全球业务与AI基建融资敞口，不声称低AI或纯美国银行信用；不另加GDP份额。"
+    },
+    {
+      "id": "platforms",
+      "name": "平台巨头",
+      "panel": "ai",
+      "tickers": [
+        "MSFT",
+        "AMZN",
+        "GOOGL",
+        "META",
+        "ORCL"
+      ],
+      "boundary": "云、订阅、广告与零售混合；已复核分部收入利润，不能把云收入、AI资本开支或部门改名当作纯AI收入。"
+    },
+    {
+      "id": "hardware",
+      "name": "算力硬件",
+      "panel": "ai",
+      "tickers": [
+        "NVDA",
+        "AVGO",
+        "AMD",
+        "MU",
+        "ANET",
+        "MRVL",
+        "DELL",
+        "HPE",
+        "CRDO",
+        "ALAB"
+      ],
+      "boundary": "芯片、内存、网络互连及整机；AVGO含高利润基础软件，DELL/HPE含传统服务器PC或融资。按硬件产业链归属，未声称收入利润全部源自AI。"
+    },
+    {
+      "id": "software",
+      "name": "应用与数据软件",
+      "panel": "ai",
+      "tickers": [
+        "PLTR",
+        "CRM",
+        "NOW",
+        "ADBE",
+        "SNOW",
+        "DDOG"
+      ],
+      "boundary": "AI商业化与替代压力观察；既有订阅、数据消费及运维业务为主，纯AI利润大多未单列。SNOW最近年度GAAP净亏损。"
+    },
+    {
+      "id": "infrastructure",
+      "name": "机房与电力建设",
+      "panel": "ai",
+      "tickers": [
+        "VRT",
+        "ETN",
+        "JCI",
+        "EME",
+        "FIX",
+        "NVT",
+        "GEV",
+        "PWR",
+        "HUBB",
+        "BE"
+      ],
+      "boundary": "数据中心电气冷却、机电工程、电网及发电设备；多数仍包含传统需求，AI独立利润未单列。BE含燃料电池与项目执行风险，最近年度GAAP净亏损。"
+    }
+  ],
+  "calendar_reference": "SPY",
+  "constituent_corrections": [
+    {
+      "old": [
+        "EQR",
+        "AVB"
+      ],
+      "new": [
+        "MAA",
+        "UDR"
+      ],
+      "reason": "原两家公司2026-08-17合并为Vivmark；改用持续独立上市的公寓REIT，避免重复及失效代码。",
+      "source": "https://investors.avalonbay.com/sec-filings/all-sec-filings/content/0001104659-26-097833/tm2623381d1_ex99-1.htm"
+    },
+    {
+      "old": [
+        "TMHC"
+      ],
+      "new": [
+        "MHO"
+      ],
+      "reason": "TMHC于2026-07-24被伯克希尔现金收购；改用同类美国住宅开发商。",
+      "source": "https://investors.taylormorrison.com/news-and-events/news/news-details/2026/Berkshire-Hathaway-Completes-Acquisition-of-Taylor-Morrison/default.aspx"
+    },
+    {
+      "old": [
+        "V"
+      ],
+      "new": [
+        "SCI"
+      ],
+      "reason": "支付覆盖商品与服务及全球交易，改为北美殡葬服务，补充本地居民服务。",
+      "source": "https://www.sec.gov/Archives/edgar/data/89089/000162828026007695/0001628280-26-007695-index.html",
+      "review_date": "2026-09-24"
+    },
+    {
+      "old": [
+        "MA"
+      ],
+      "new": [
+        "ROL"
+      ],
+      "reason": "支付网络重复且跨商品服务，改为住宅及商业除虫服务；保留其商业客户混入说明。",
+      "source": "https://www.sec.gov/Archives/edgar/data/84839/000008483926000008/0000084839-26-000008-index.html",
+      "review_date": "2026-09-24"
+    },
+    {
+      "old": [
+        "KO"
+      ],
+      "new": [
+        "PEP"
+      ],
+      "reason": "KO美国收入约40%；PEP美国收入约56%，并增加食品覆盖。",
+      "source": "https://www.sec.gov/Archives/edgar/data/77476/000007747626000007/0000077476-26-000007-index.html",
+      "review_date": "2026-09-24"
+    },
+    {
+      "old": [
+        "F"
+      ],
+      "new": [
+        "ORLY"
+      ],
+      "reason": "福特利润显著来自商用车和融资、受电动车亏损影响；保留GM观察新车，增加汽车维修零件消费。",
+      "source": "https://www.sec.gov/Archives/edgar/data/898173/000089817326000009/0000898173-26-000009-index.html",
+      "review_date": "2026-09-24"
+    },
+    {
+      "old": [
+        "AGCO"
+      ],
+      "new": [
+        "SNA"
+      ],
+      "reason": "AGCO北美收入约16.5%，利润集中欧洲中东；SNA补充美国维修企业的工具设备投入。",
+      "source": "https://www.sec.gov/Archives/edgar/data/91440/000009144026000045/0000091440-26-000045-index.html",
+      "review_date": "2026-09-24"
+    },
+    {
+      "old": [
+        "OSK"
+      ],
+      "new": [
+        "WAB"
+      ],
+      "reason": "OSK消防、国防、邮政等公共部门业务较重；WAB主要收入与分部利润来自货运铁路设备及服务，仍含公共交通与海外需求。",
+      "source": "https://www.sec.gov/Archives/edgar/data/943452/000162828026008067/0001628280-26-008067-index.html",
+      "review_date": "2026-09-24"
+    },
+    {
+      "old": [
+        "KBH"
+      ],
+      "new": [
+        "LOW"
+      ],
+      "reason": "住宅篮子不再全部是开发商，增加美国住房翻新零售；LOW含家电日常维护需求。",
+      "source": "https://www.sec.gov/Archives/edgar/data/60667/000006066726000029/0000060667-26-000029-index.html",
+      "review_date": "2026-09-24"
+    },
+    {
+      "old": [
+        "MTH"
+      ],
+      "new": [
+        "MAS"
+      ],
+      "reason": "增加翻新使用的水暖及涂料，降低新房开发商重复。",
+      "source": "https://www.sec.gov/Archives/edgar/data/62996/000006299626000005/0000062996-26-000005-index.html",
+      "review_date": "2026-09-24"
+    },
+    {
+      "old": [
+        "MHO"
+      ],
+      "new": [
+        "BLDR"
+      ],
+      "reason": "增加美国住宅建筑材料及预制构件供应链。",
+      "source": "https://www.sec.gov/Archives/edgar/data/1316835/000119312526054643/0001193125-26-054643-index.html",
+      "review_date": "2026-09-24"
+    }
+  ],
+  "missing_day_policy": "carry_basket_after_source_attempts",
+  "gap_recovery": "equal_weight_between_complete_observations",
+  "benchmark": {
+    "ticker": "^GSPC",
+    "name": "S&P 500（价格指数）",
+    "return_type": "price_return"
+  },
+  "constituent_review": "references/constituent-review.md",
+  "financial_expansion": {
+    "date": "2026-09-24",
+    "review": "bank-expansion-20260924/review.md",
+    "regional_reference": "https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-regional-banking-etf-kre",
+    "holdings_as_of": "2026-09-23",
+    "rationale": "保留原银行，按用户要求加入KRE前十大持仓中兼顾规模和地域覆盖的区域银行，以及阿波罗等另类资产管理机构；所有成分直接每日等权，不做三类各占三分之一，不自动按KRE换仓。"
+  },
+  "chart": {
+    "period_months": [
+      1,
+      3,
+      6,
+      12,
+      36
+    ],
+    "default_months": 12,
+    "axis_date_format": "%Y-%m"
+  },
+  "listing_starts": {
+    "ALAB": {
+      "date": "2024-03-20",
+      "source": "https://ir.asteralabs.com/news-releases/news-release-details/astera-labs-announces-pricing-initial-public-offering"
+    },
+    "GEV": {
+      "date": "2024-03-27",
+      "source": "https://www.ge.com/news/press-releases/ge-board-of-directors-approves-spin-off-of-ge-vernova-ge-vernova-and-ge-aerospace-to",
+      "note": "含when-issued交易；普通交易自2024-04-02开始"
+    }
+  },
+  "verified_large_moves": [
+    {
+      "ticker": "BE",
+      "from_date": "2024-11-14",
+      "date": "2024-11-15",
+      "return": 0.5918674698795181,
+      "receipt": "references/verified-be-20241115.json",
+      "receipt_sha256": "90c971215b9b5354393d14b1fb2af811eca2b90c9c04197dfc9fad9fbcc21ec7",
+      "source": "https://www.bloomenergy.com/news/bloom-energy-announces-gigawatt-fuel-cell-procurement-agreement-with-aep-to-power-ai-data-centers/",
+      "reason": "Yahoo与进门收盘13.28至21.14一致；AEP采购协议公告后的真实涨幅。"
+    }
+  ],
+  "publication": {
+    "provider": "github_pages",
+    "repository": "zhuoran787/us-economy-baskets",
+    "url": "https://zhuoran787.github.io/us-economy-baskets/",
+    "schedule": {
+      "cron": "30 17 * * 1-5",
+      "timezone": "America/New_York",
+      "label": "纽约时间每个工作日17:30（收盘后）"
+    }
+  }
+}

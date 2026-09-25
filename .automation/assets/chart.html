@@ -1,0 +1,148 @@
+<div id="us-basket-history">
+  <style>
+    #us-basket-history { color:var(--foreground); }
+    #us-basket-history .bh-controls { margin:8px 0 16px; }
+    #us-basket-history .bh-panel { margin:18px 0 24px; }
+    #us-basket-history .bh-legend { display:flex;flex-wrap:wrap;gap:10px 16px;margin:8px 0; }
+    #us-basket-history .bh-series { appearance:none;background:transparent;border:0;padding:0;color:var(--foreground);font:inherit;display:inline-flex;align-items:center;gap:5px; }
+    #us-basket-history .bh-swatch { display:inline-block;width:16px;height:3px; }
+    #us-basket-history .bh-chart { display:block;width:100%;overflow:visible; }
+    #us-basket-history .bh-chart text { fill:var(--foreground);font-size:12px; }
+    #us-basket-history .bh-chart .domain,#us-basket-history .bh-chart .tick line { stroke:var(--border); }
+    #us-basket-history .bh-plot { position:relative; }
+    #us-basket-history .tooltip { position:absolute;pointer-events:none;z-index:2;background:var(--popover);color:var(--popover-foreground);padding:8px; }
+    #us-basket-history .bh-tip-row { display:flex;justify-content:space-between;gap:20px; }
+    #us-basket-history .bh-note { margin:10px 0; }
+  </style>
+  <h3>美国各经济板块股票表现</h3>
+  <div class="text-small" data-asof></div>
+  <div class="text-small" data-quality></div>
+  <div class="viz-controls bh-controls">
+    <label class="form-label">观察区间
+      <select class="form-select" data-range aria-label="观察区间">
+      </select>
+    </label>
+  </div>
+  <div class="text-small" data-history-note hidden></div>
+  <div data-panels></div>
+  <div class="tooltip" role="tooltip" hidden></div>
+  <div class="text-small bh-note">每日等权收益 · 所选区间起点＝100 · 美元复权收盘价 · 未扣交易成本</div>
+  <div class="text-small">S&amp;P 500虚线为价格指数（不含股息）；篮子含分红复权。当前名单回溯，存在选择偏差。数据：Yahoo Finance，进门补缺。</div>
+  <details><summary>成分股与计算口径</summary><div data-constituents></div>
+    <p class="text-small">每天用全部成分股当日收益的算术平均作为篮子收益，再逐日连乘；涨得多的股票不会自动获得更大次日权重。非日内连续调仓模拟。</p>
+  </details>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(() => {
+  const root=document.getElementById('us-basket-history');
+  const data=__BASKET_DATA__;
+  const dates=data.dates.map(d=>new Date(d+'T00:00:00Z'));
+  const range=root.querySelector('[data-range]');
+  const tooltip=root.querySelector('[role="tooltip"]');
+  root.style.position='relative';
+  root.querySelector('[data-asof]').textContent='截至 '+data.as_of+' · 统一历史起点 '+data.dates[0]+' · '+data.series.length+' 个篮子 · '+data.series.reduce((s,g)=>s+g.tickers.length,0)+' 只股票';
+  root.querySelector('[data-quality]').textContent='缺数沿用前值：已开启 · 本次 '+data.carried_days+' 个篮子日沿用前值';
+  const panels=[{id:'economy',name:'传统板块4个＋银行1个'},{id:'ai',name:'AI · 四个观察篮子'}];
+  const hidden=new Set();
+  const plotNodes=[];
+  const periods=data.chart.period_months.map(String);
+  periods.forEach(value=>{const option=document.createElement('option');option.value=value;option.textContent=Number(value)%12===0?'近'+Number(value)/12+'年':'近'+value+'个月';range.append(option);});
+  let months=String(data.chart.default_months);
+  let pinned=false;
+  function restore(state){
+    const s=state?.privateContent;
+    if(s){if(periods.includes(String(s.months)))months=String(s.months);hidden.clear();(s.hidden||[]).forEach(id=>hidden.add(id));}
+    range.value=months;
+  }
+  restore(window.openai?.widgetState);
+  function save(){if(window.openai?.setWidgetState)window.openai.setWidgetState({modelContent:{periodMonths:Number(months),asOf:data.as_of},privateContent:{months,hidden:[...hidden]}}).catch(()=>{});}
+  function money(v){return d3.format('.2f')(v);}
+  function hideTip(){tooltip.hidden=true;root.querySelectorAll('[data-chart-hover-guide],[data-chart-hover-marker]').forEach(n=>n.setAttribute('visibility','hidden'));}
+  const names=root.querySelector('[data-constituents]');
+  data.series.forEach(g=>{const p=document.createElement('p');p.className='text-small';p.textContent=g.name+'（'+g.tickers.length+'只）：'+g.tickers.join(' · ');names.append(p);});
+  panels.forEach(panel=>{
+    const section=document.createElement('section');section.className='bh-panel';
+    const heading=document.createElement('h3');heading.textContent=panel.name;section.append(heading);
+    const legend=document.createElement('div');legend.className='bh-legend';section.append(legend);
+    const plot=document.createElement('div');plot.className='bh-plot';
+    const svg=d3.select(plot).append('svg').attr('class','bh-chart').attr('role','img').attr('aria-label',panel.name+'等权历史表现折线图');
+    section.append(plot);root.querySelector('[data-panels]').append(section);
+    const series=[...data.series.filter(g=>g.panel===panel.id), {...data.benchmark}];
+    series.forEach((g,i)=>{
+      g.color=g.benchmark?'var(--foreground)':'var(--viz-series-'+(i+1)+')';
+      const button=document.createElement('button');button.type='button';button.className='bh-series cursor-interaction';button.dataset.series=g.id;
+      const swatch=document.createElement('span');swatch.className='bh-swatch';
+      if(g.benchmark){swatch.style.height='0';swatch.style.borderTop='2px dashed '+g.color;}else swatch.style.background=g.color;
+      const label=document.createElement('span');label.textContent=g.name;button.append(swatch,label);legend.append(button);
+      button.addEventListener('click',()=>{hidden.has(g.id)?hidden.delete(g.id):hidden.add(g.id);drawAll();save();});
+    });
+    plotNodes.push({plot,svg,series,legend});
+  });
+  function draw({plot,svg,series,legend}){
+    const width=Math.max(280,plot.getBoundingClientRect().width),height=300;
+    const m={l:64,r:20,t:16,b:52},w=width-m.l-m.r,h=height-m.t-m.b;
+    svg.attr('viewBox','0 0 '+width+' '+height).attr('height',height);svg.selectAll('*').remove();
+    const cutoff=new Date(dates.at(-1));cutoff.setUTCMonth(cutoff.getUTCMonth()-Number(months));
+    let start=dates.findIndex(d=>d>=cutoff);if(start<0)start=0;
+    const shown=series.map(g=>{
+      const baseIndex=g.values.findIndex((value,i)=>i>=start&&Number.isFinite(value));
+      return {...g,points:dates.slice(start).map((date,i)=>({date,value:Number.isFinite(g.values[start+i])&&baseIndex>=0?g.values[start+i]/g.values[baseIndex]*100:null,flag:(g.flags||[]).find(f=>f.date===data.dates[start+i])}))};
+    });
+    const active=shown.filter(g=>!hidden.has(g.id));
+    legend.querySelectorAll('button').forEach(b=>{const yes=!hidden.has(b.dataset.series);b.setAttribute('aria-pressed',String(yes));b.style.opacity=yes?'1':'.45';});
+    const extent=d3.extent((active.length?active:shown).flatMap(g=>g.points.map(p=>p.value).filter(Number.isFinite)));
+    const padding=Math.max((extent[1]-extent[0])*.08,1);
+    const x=d3.scaleUtc().domain(d3.extent(dates.slice(start))).range([m.l+3,width-m.r-3]);
+    const y=d3.scaleLinear().domain([extent[0]-padding,extent[1]+padding]).nice().range([height-m.b-3,m.t+3]);
+    svg.append('rect').attr('data-chart-frame','').attr('x',m.l).attr('y',m.t).attr('width',w).attr('height',h).attr('fill','none').attr('stroke','var(--border)');
+    const formatMonth=d3.utcFormat(data.chart.axis_date_format);
+    const seenMonths=new Set();
+    const monthTicks=x.ticks(width<400?3:5).filter(date=>{const label=formatMonth(date);if(seenMonths.has(label))return false;seenMonths.add(label);return true;});
+    svg.append('g').attr('data-x-axis','').attr('transform','translate(0,'+(height-m.b)+')').call(d3.axisBottom(x).tickValues(monthTicks).tickFormat(formatMonth));
+    svg.append('g').attr('transform','translate('+m.l+',0)').call(d3.axisLeft(y).ticks(5));
+    svg.append('text').attr('class','axis-title').attr('data-axis','x').attr('x',m.l+w/2).attr('y',height-8).attr('text-anchor','middle').text('年月');
+    svg.append('text').attr('class','axis-title').attr('data-axis','y').attr('transform','translate(14,'+(m.t+h/2)+') rotate(-90)').attr('text-anchor','middle').text('指数（起点100）');
+    const line=d3.line().x(p=>x(p.date)).y(p=>y(p.value));
+    active.forEach(g=>{
+      svg.append('path').datum(g.points).attr('data-series-path',g.id).attr('d',line.defined(p=>Number.isFinite(p.value)&&!p.flag)).attr('fill','none').attr('stroke',g.color).attr('stroke-width',2).attr('stroke-dasharray',g.benchmark?'7 5':null);
+      const dashed=d3.line().x(p=>x(p.date)).y(p=>y(p.value));
+      g.points.slice(1).forEach((p,i)=>{if(Number.isFinite(p.value)&&Number.isFinite(g.points[i].value)&&(p.flag||g.points[i].flag))svg.append('path').datum([g.points[i],p]).attr('d',dashed).attr('fill','none').attr('stroke',g.color).attr('stroke-width',2).attr('stroke-dasharray','4 4');});
+    });
+    const guide=svg.append('line').attr('data-chart-hover-guide','').attr('y1',m.t).attr('y2',height-m.b).attr('stroke','var(--muted-foreground)').attr('visibility','hidden');
+    const markers=active.map(g=>svg.append('circle').attr('data-chart-hover-marker',g.id).attr('r',4).attr('fill',g.color).attr('visibility','hidden'));
+    function show(event){
+      const px=Math.max(x.range()[0],Math.min(x.range()[1],d3.pointer(event,svg.node())[0]));const date=x.invert(px);
+      guide.attr('x1',px).attr('x2',px).attr('visibility','visible');
+      const rows=active.map((g,i)=>{
+        const n=d3.bisector(p=>p.date).left(g.points,date);const left=g.points[Math.max(0,n-1)],right=g.points[Math.min(n,g.points.length-1)];
+        if(!Number.isFinite(left.value)||!Number.isFinite(right.value)){markers[i].attr('visibility','hidden');return {name:g.name,value:null};}
+        const fraction=(+right.date===+left.date)?0:(date-left.date)/(right.date-left.date);
+        const value=left.value+(right.value-left.value)*fraction;
+        const flagged=left.flag||right.flag;
+        markers[i].attr('cx',px).attr('cy',y(value)).attr('visibility','visible');return {name:g.name+(flagged?'（缺数区间）':''),value};
+      });
+      tooltip.replaceChildren();const title=document.createElement('div');title.textContent=d3.utcFormat('%Y-%m-%d')(date)+' · 游标插值';tooltip.append(title);
+      rows.forEach(r=>{const row=document.createElement('div');row.className='bh-tip-row text-small';const label=document.createElement('span');label.textContent=r.name;const value=document.createElement('span');value.className='tabular-nums';value.textContent=Number.isFinite(r.value)?money(r.value):'成分尚未全部上市';row.append(label,value);tooltip.append(row);});
+      tooltip.hidden=false;const rb=root.getBoundingClientRect(),pb=plot.getBoundingClientRect();
+      tooltip.style.left=Math.max(0,Math.min(root.clientWidth-tooltip.offsetWidth,px+12))+'px';tooltip.style.top=(pb.top-rb.top+20)+'px';
+    }
+    svg.append('rect').attr('data-chart-hit','').attr('data-chart-hover-overlay','cross-series').attr('x',m.l).attr('y',m.t).attr('width',w).attr('height',h).attr('fill','transparent')
+      .on('pointermove',event=>{if(!pinned)show(event);}).on('pointerleave',()=>{if(!pinned)hideTip();}).on('click',event=>{pinned=!pinned;show(event);});
+    // Remove only optional colliding tick labels; preserve axis titles and data marks.
+    const labels=[...svg.node().querySelectorAll('.tick text')];
+    const accepted=[];labels.forEach(label=>{const b=label.getBoundingClientRect();if(accepted.some(a=>b.left<a.right+4&&b.right>a.left-4&&b.top<a.bottom+4&&b.bottom>a.top-4))label.textContent='';else accepted.push(b);});
+  }
+  function drawAll(){
+    pinned=false;hideTip();plotNodes.forEach(draw);
+    const cutoff=new Date(dates.at(-1));cutoff.setUTCMonth(cutoff.getUTCMonth()-Number(months));
+    const clipped=cutoff<dates[0];
+    const note=root.querySelector('[data-history-note]');note.hidden=!clipped;
+    note.textContent=clipped?'所选区间超过统一历史起点，仅展示自'+data.dates[0]+'起的真实数据；全部篮子和标普在同一天归一为100。':'';
+  }
+  range.addEventListener('change',()=>{months=range.value;drawAll();save();});
+  window.addEventListener('openai:set_globals',event=>{if(event.detail?.globals?.widgetState){restore(event.detail.globals.widgetState);drawAll();}});
+  new ResizeObserver(drawAll).observe(root);
+  drawAll();
+})();
+</script>

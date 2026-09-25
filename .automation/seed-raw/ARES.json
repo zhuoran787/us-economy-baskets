@@ -1,0 +1,14 @@
+{
+  "ticker": "ARES",
+  "requested_end": "2026-09-23",
+  "retrieved_at": "2026-09-24T14:14:23.069Z",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"code\":200,\"msg\":\"success\",\"data\":{\"standardized_info\":{\"stock_full_code\":\"usARES\",\"stock_code\":\"ARES\",\"stock_name\":\"Ares Management\",\"market_type\":\"us\",\"currency\":\"USD\"},\"meta\":{\"freq\":\"1d\",\"freq_type\":\"period\",\"source_table\":\"ads_stock_kline_us_day\",\"startDateTime\":\"2026-09-18 00:00:00\",\"endDateTime\":\"2026-09-23 23:59:59\",\"order\":\"asc\",\"limit\":20,\"fields\":[\"stock_code\",\"period_end_date\",\"close_price\",\"front_adjust_close_price\"],\"adjust\":\"none\"},\"bars\":[{\"stock_code\":\"ARES\",\"period_end_date\":\"2026-09-18\",\"close_price\":123.800000,\"front_adjust_close_price\":123.800000},{\"stock_code\":\"ARES\",\"period_end_date\":\"2026-09-21\",\"close_price\":126.670000,\"front_adjust_close_price\":126.670000},{\"stock_code\":\"ARES\",\"period_end_date\":\"2026-09-22\",\"close_price\":124.720000,\"front_adjust_close_price\":124.720000},{\"stock_code\":\"ARES\",\"period_end_date\":\"2026-09-23\",\"close_price\":121.480000,\"front_adjust_close_price\":121.480000}]},\"failed_query\":null}"
+      }
+    ],
+    "isError": false
+  }
+}
