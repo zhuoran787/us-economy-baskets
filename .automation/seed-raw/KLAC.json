@@ -1,0 +1,14 @@
+{
+  "ticker": "KLAC",
+  "requested_end": "2026-09-24",
+  "retrieved_at": "2026-09-25T10:01:25.299Z",
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"code\":200,\"msg\":\"success\",\"data\":{\"standardized_info\":{\"stock_full_code\":\"usKLAC\",\"stock_code\":\"KLAC\",\"stock_name\":\"科磊\",\"market_type\":\"us\",\"currency\":\"USD\"},\"meta\":{\"freq\":\"1d\",\"freq_type\":\"period\",\"source_table\":\"ads_stock_kline_us_day\",\"startDateTime\":\"2026-09-18 00:00:00\",\"endDateTime\":\"2026-09-24 23:59:59\",\"order\":\"asc\",\"limit\":20,\"fields\":[\"stock_code\",\"period_end_date\",\"close_price\",\"front_adjust_close_price\"],\"adjust\":\"none\"},\"bars\":[{\"stock_code\":\"KLAC\",\"period_end_date\":\"2026-09-18\",\"close_price\":176.990000,\"front_adjust_close_price\":176.990000},{\"stock_code\":\"KLAC\",\"period_end_date\":\"2026-09-21\",\"close_price\":183.970000,\"front_adjust_close_price\":183.970000},{\"stock_code\":\"KLAC\",\"period_end_date\":\"2026-09-22\",\"close_price\":188.320000,\"front_adjust_close_price\":188.320000},{\"stock_code\":\"KLAC\",\"period_end_date\":\"2026-09-23\",\"close_price\":187.860000,\"front_adjust_close_price\":187.860000},{\"stock_code\":\"KLAC\",\"period_end_date\":\"2026-09-24\",\"close_price\":187.110000,\"front_adjust_close_price\":187.110000}]},\"failed_query\":null}"
+      }
+    ],
+    "isError": false
+  }
+}

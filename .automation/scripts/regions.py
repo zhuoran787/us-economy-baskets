@@ -10,7 +10,8 @@ import urllib.request
 from zoneinfo import ZoneInfo
 
 import exchange_calendars as xcals
-from update import SKILL, load_config, digest, write_json, fetch_one, basket_with_gaps, default_end
+from update import SKILL, load_config, digest, write_json, fetch_one, basket_with_gaps, default_end, repair_prices
+from regional_sources import repair_native
 
 
 def sessions(c, market, start, end):
@@ -53,13 +54,23 @@ def parse(raw, stock, start, end):
     return prices
 
 
-def supplement(stock, primary, expected, folder, start, end):
+def supplement(stock, primary, expected, folder, start, end, output=None):
     """Preserve an actual alternate request; never mix an unadjusted close into adjclose."""
     ticker = stock['ticker']
     missing = sorted(expected - set(primary))
     receipt = dict(ticker=ticker, missing=missing, repaired=[], attempts=[])
     if not missing:
         return receipt
+    if stock['market']=='US' and output is not None:
+        cache=Path(output)/'raw'/(ticker+'.json')
+        if cache.exists():
+            repair=repair_prices(ticker,(folder/(ticker+'.json')).read_bytes(),primary,sorted(expected),Path(output),folder)
+            receipt['attempts'].append(dict(source='Comein historical K-line cache',details=repair))
+            receipt['repaired'].extend(repair['repaired'])
+            missing=sorted(expected-set(primary))
+            if not missing:
+                receipt['remaining']=[]
+                return receipt
     # A different Yahoo response is a fallback route, not an independent provider.
     p1 = int(dt.datetime.fromisoformat(start).replace(tzinfo=dt.timezone.utc).timestamp())-86400
     p2 = int(dt.datetime.fromisoformat(end).replace(tzinfo=dt.timezone.utc).timestamp())+86400
@@ -80,6 +91,11 @@ def supplement(stock, primary, expected, folder, start, end):
         attempt.update(status='unavailable',error=str(exc))
     receipt['attempts'].append(attempt)
     remaining=sorted(expected-set(primary))
+    if remaining and stock['market'] in ('XTAI','XKRX'):
+        native=repair_native(stock,primary,expected,folder)
+        receipt['attempts'].append(native)
+        receipt['repaired'].extend(item['date'] for item in native['repaired'])
+        remaining=sorted(expected-set(primary))
     if remaining:
         # Stooq is independent. Its daily-close adjustment policy is not certified
         # for every venue: archive the response but do not invent a conversion.
@@ -109,6 +125,10 @@ def align(prices, expected, dates):
     return result,closed
 
 
+def region_groups(c, region):
+    return region.get('groups') or [g for g in c['groups'] if g['panel']=='economy']
+
+
 def run_region(c, fingerprint, region, end, seed=None):
     output=Path(c['output_dir'])/'regions'/region['id']
     stamp=dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')
@@ -116,8 +136,9 @@ def run_region(c, fingerprint, region, end, seed=None):
     stocks=region['stocks'];start=c['history_start']
     tickers=[s['ticker'] for s in stocks]
     if len(set(tickers))!=len(tickers):raise ValueError('地区成分重复')
-    group_defs=[g for g in c['groups'] if g['panel']=='economy']
-    if set(s['group'] for s in stocks)!=set(g['id'] for g in group_defs):raise ValueError('地区五个分组不完整')
+    group_defs=region_groups(c,region)
+    if set(s['group'] for s in stocks)!=set(g['id'] for g in group_defs):raise ValueError('配置分组与成分不一致')
+    panel_id=region.get('panel_id','economy')
     manifest=dict(config_hash=fingerprint,requested_end=end,files=[])
     def get(stock):
         ticker=stock['ticker']
@@ -144,7 +165,7 @@ def run_region(c, fingerprint, region, end, seed=None):
         if digest(raw)!=receipt['sha256']:raise ValueError('行情指纹不符')
         source_prices[stock['ticker']]=parse(raw,stock,start,end)
     def repair(stock):
-        return supplement(stock,source_prices[stock['ticker']],calendars[stock['market']],folder,start,end)
+        return supplement(stock,source_prices[stock['ticker']],calendars[stock['market']],folder,start,end,c['output_dir'])
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         repairs=list(pool.map(repair,stocks))
     write_json(folder/'repairs.json',repairs)
@@ -166,7 +187,7 @@ def run_region(c, fingerprint, region, end, seed=None):
     for group in group_defs:
         members=[s for s in stocks if s['group']==group['id']];ts=[s['ticker'] for s in members]
         values,flags,complete=basket_with_gaps(ts,prices,dates,c['base'],True)
-        series.append(dict(id=group['id'],name=group['name'],panel='economy',tickers=ts,
+        series.append(dict(id=group['id'],name=group['name'],panel=panel_id,tickers=ts,
                            values=values,flags=flags,last_complete=complete,history_start=start,members=members,last_quotes={t:last_quotes[t] for t in ts}))
     ub=us['benchmark'];known={d:v for d,v in zip(us['dates'],ub['values']) if v is not None}
     benchmark_values=[];prev=None
@@ -180,9 +201,9 @@ def run_region(c, fingerprint, region, end, seed=None):
                 methodology=c['rebalance'],selection_date=c['selection_date'],series=series,
                 benchmark=dict(ub,values=benchmark_values),chart=c['chart'],
                 carried_days=sum(sum(f['kind']=='carried' for f in g['flags']) for g in series),
-                missing_day_policy=c['missing_day_policy'],region=region['id'],title=region['name']+'各经济板块股票表现',
+                missing_day_policy=c['missing_day_policy'],region=region['id'],title=region.get('title',region['name']+'各经济板块股票表现'),
                 region_note=region['note'],currency_note='各股本币复权收益 · 不加入货币换算收益',
-                panels=[dict(id='economy',name='传统板块4个＋银行1个')])
+                panels=[dict(id=panel_id,name=region.get('panel_name','传统板块4个＋银行1个'))])
     audit=dict(status='passed',config_hash=fingerprint,stocks=len(stocks),baskets=len(series),first=start,last=dates[-1],carried_days=report['carried_days'])
     write_json(folder/'report.json',report);write_json(folder/'audit.json',audit)
     output.mkdir(parents=True,exist_ok=True);write_json(output/'latest.json',report)

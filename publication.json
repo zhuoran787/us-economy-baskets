@@ -1,10 +1,10 @@
 {
   "as_of": "2026-09-24",
   "history_start": "2024-03-27",
-  "config_hash": "443487b01d19f4e4ffedca9e6a95ad726a0e881f68273c87bd63eac53cddfee6",
-  "html_sha256": "698c049d5cfc696066667314292e26f2a50ce4d1eaf9a0d46fb876581560de48",
-  "baskets": 24,
-  "stocks": 221,
+  "config_hash": "7d8cdaf27ccd46aeb0d8c0d091b1ea531679cc3efb5833d8f33bdababe24dbce",
+  "html_sha256": "2839773a5cd1e5b0af18a468522ffb9ab2f98c8d90c44913decf91d5b5cf9688",
+  "baskets": 26,
+  "stocks": 237,
   "regions": [
     {
       "id": "us",
@@ -33,8 +33,22 @@
       "baskets": 5,
       "stocks": 44,
       "carried_days": 0
+    },
+    {
+      "id": "global_ai",
+      "as_of": "2026-09-24",
+      "baskets": 2,
+      "stocks": 16,
+      "carried_days": 1
     }
   ],
-  "carried_days": 1,
-  "url": "https://zhuoran787.github.io/us-economy-baskets/"
+  "carried_days": 2,
+  "url": "https://zhuoran787.github.io/us-economy-baskets/",
+  "membership_audit": {
+    "stock_memberships": 237,
+    "unique_tickers": 237,
+    "unique_issuers": 237,
+    "duplicate_tickers": 0,
+    "duplicate_issuers": 0
+  }
 }

@@ -25,12 +25,34 @@ def write_json(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
 
 
+def validate_memberships(c):
+    """One direct listed-company exposure across every basket, including ADR aliases."""
+    memberships = [(t, 'us/'+g['id']) for g in c['groups'] for t in g['tickers']]
+    memberships += [(s['ticker'], r['id']+'/'+s['group'])
+                    for r in c.get('regions', []) for s in r['stocks']]
+    identities = c['issuer_by_ticker']
+    tickers, issuers = {}, {}
+    for ticker, location in memberships:
+        if ticker in tickers:
+            raise ValueError(f'跨篮子股票重复: {ticker}: {tickers[ticker]} / {location}')
+        issuer = identities.get(ticker, '').strip().casefold()
+        if not issuer:
+            raise ValueError(f'{ticker}: 须先核验上市公司身份并登记 issuer_by_ticker')
+        if issuer in issuers:
+            raise ValueError(f'同一公司重复（含双重上市/ADR）: {ticker}: {issuers[issuer]} / {location}')
+        tickers[ticker] = location
+        issuers[issuer] = location
+    return dict(stock_memberships=len(memberships), unique_tickers=len(tickers),
+                unique_issuers=len(issuers), duplicate_tickers=0, duplicate_issuers=0)
+
+
 def load_config():
     raw = CONFIG.read_bytes()
     c = json.loads(raw)
     tickers = [t for g in c['groups'] for t in g['tickers']]
     if len(tickers) != len(set(tickers)) or not tickers:
         raise ValueError('成分股重复或为空')
+    validate_memberships(c)
     if c['rebalance'] != 'daily_equal_weight_returns':
         raise ValueError('当前实现仅接受每日等权收益')
     return c, digest(raw), tickers

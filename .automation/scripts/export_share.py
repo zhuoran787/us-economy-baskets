@@ -5,7 +5,7 @@ import hashlib
 import html
 import json
 import re
-from update import SKILL, load_config
+from update import SKILL, load_config, validate_memberships
 
 
 def export(target):
@@ -39,7 +39,7 @@ def export(target):
     notice = config['publication']['schedule']['label']+'自动更新；当前数据截至'+data['as_of']+'。'+'；'.join(notes)
     source = source.replace('<details>', '<p class="text-small">'+html.escape(notice)+'</p>\n<details>', 1)
     page = (SKILL / 'assets/share-shell.html').read_text().replace('__BASKET_FRAGMENT__', html.escape(source))
-    page = page.replace('__BASKET_TITLE__', html.escape('各经济板块股票表现｜美国·欧洲·日本·东南亚｜截至'+data['as_of']))
+    page = page.replace('__BASKET_TITLE__', html.escape('各经济板块股票表现｜'+'·'.join(r['region_name'] for r in reports)+'｜截至'+data['as_of']))
     if '/Users/' in page or re.search(r'<script[^>]*src=', html.unescape(page)):
         raise ValueError('分享页面包含本地路径或外部脚本')
     target = Path(target)
@@ -49,7 +49,8 @@ def export(target):
                    html_sha256=hashlib.sha256(target.read_bytes()).hexdigest(),
                    baskets=sum(len(r['series']) for r in reports), stocks=sum(len(g['tickers']) for r in reports for g in r['series']),
                    regions=[dict(id=r['region'],as_of=r['as_of'],baskets=len(r['series']),stocks=sum(len(g['tickers']) for g in r['series']),carried_days=r['carried_days']) for r in reports],
-                   carried_days=sum(r['carried_days'] for r in reports), url=config['publication']['url'])
+                   carried_days=sum(r['carried_days'] for r in reports), url=config['publication']['url'],
+                   membership_audit=validate_memberships(config))
     (target.parent / 'publication.json').write_text(json.dumps(receipt, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps(receipt, ensure_ascii=False))
     return receipt
