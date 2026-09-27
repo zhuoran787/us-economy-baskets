@@ -1,7 +1,18 @@
-<nav class="viz-row" aria-label="地区导航" data-region-nav></nav>
+<nav class="viz-row bh-region-nav" aria-label="地区导航" data-region-nav></nav>
 <div id="us-basket-history" class="basket-history">
   <style>
-    .basket-history { color:var(--foreground); }
+    .bh-region-nav { display:flex;flex-wrap:wrap;gap:12px 24px;margin-bottom:28px; }
+    .basket-history { color:var(--foreground);scroll-margin-top:24px; }
+    .basket-history[data-section-index] { margin-top:72px;padding-top:32px;border-top:2px solid var(--foreground); }
+    .basket-history .bh-region-header { margin-bottom:24px;padding:20px 24px;background:var(--card);border-left:5px solid var(--foreground); }
+    .basket-history .bh-region-header h2 { margin:0 0 12px;font-size:28px;line-height:1.35;font-weight:700;overflow-wrap:anywhere; }
+    .basket-history .bh-region-header [data-quality] { margin-top:6px; }
+    .basket-history [data-region-note]:not(:empty) { margin-bottom:16px; }
+    @media(max-width:480px) {
+      .basket-history[data-section-index] { margin-top:48px;padding-top:24px; }
+      .basket-history .bh-region-header { padding:16px; }
+      .basket-history .bh-region-header h2 { font-size:24px; }
+    }
     .basket-history .bh-controls { margin:8px 0 16px; }
     .basket-history .bh-panel { margin:18px 0 24px; }
     .basket-history .bh-legend { display:flex;flex-wrap:wrap;gap:10px 16px;margin:8px 0; }
@@ -15,9 +26,11 @@
     .basket-history .bh-tip-row { display:flex;justify-content:space-between;gap:20px; }
     .basket-history .bh-note { margin:10px 0; }
   </style>
-  <h3 data-title>美国各经济板块股票表现</h3>
-  <div class="text-small" data-asof></div>
-  <div class="text-small" data-quality></div>
+  <header class="bh-region-header">
+    <h2 data-title>美国各经济板块股票表现</h2>
+    <div class="text-small" data-asof></div>
+    <div class="text-small" data-quality></div>
+  </header>
   <div class="text-small" data-region-note></div>
   <div class="viz-controls bh-controls">
     <label class="form-label">观察区间
@@ -46,6 +59,10 @@
   const root=reportIndex===0?original:template.cloneNode(true);
   const region=data.region||'us';
   root.id='baskets-'+region;
+  root.setAttribute('role','region');
+  root.setAttribute('aria-labelledby',root.id+'-title');
+  root.querySelector('[data-title]').id=root.id+'-title';
+  if(reportIndex)root.dataset.sectionIndex=String(reportIndex);
   if(reportIndex)original.parentNode.append(root);
   const link=document.createElement('a');link.href='#'+root.id;link.textContent=data.region_name||'美国';nav.append(link);
   root.querySelector('[data-title]').textContent=data.title||'美国各经济板块股票表现';
