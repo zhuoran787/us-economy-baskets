@@ -1,8 +1,8 @@
 {
   "as_of": "2026-09-25",
   "history_start": "2024-03-27",
-  "config_hash": "89872d74a3c95eee6e9e797e7e52fd12a5b637a274a22c9c29e8e5fb008e868d",
-  "html_sha256": "59e7afbc08144bc3d924307ee33d802a53873f4036a8669ff0473304486db333",
+  "config_hash": "7a341e351f64399990f7370a0819afbf38e670f404214d385c78b20a9bd71856",
+  "html_sha256": "7eb9ba820a76667d9aabf847f890045fbc2053e0f2538b23c288410528925286",
   "baskets": 30,
   "stocks": 271,
   "regions": [
