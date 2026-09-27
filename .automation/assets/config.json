@@ -529,7 +529,7 @@
     }
   },
   "regional_selection": {
-    "review_date": "2026-09-25",
+    "review_date": "2026-09-26",
     "minimum_market_cap_usd_at_selection": 500000000,
     "method": "各股本币复权日收益等权；不按国家等权、不按市值加权；不作跨币种价格直接平均",
     "limitations": "不是GDP权重分解；上市公司海外收入、经营汇率敏感性和个股事件仍会影响收益。未披露的AI最终需求及逐业务利润占比不作零暴露认证。",
@@ -2802,6 +2802,717 @@
       ]
     },
     {
+      "id": "global_economy",
+      "name": "全球传统经济",
+      "title": "全球化公司：传统经济股票表现",
+      "panel_name": "商品消费 · 服务消费 · 企业投资 · 银行与信用",
+      "note": "仅纳入经营实质跨越多个主要经济区域的全球化公司，不是从各国各挑本地公司。与全站现有篮子按公司去重，因此是补充观察组，非完整全球指数。住宅投资暂缺：本次未找到足够同时满足全球化、低直接AI需求和不重合条件的代表公司。各股本币收益等权，不按国家或GDP加权。",
+      "groups": [
+        {
+          "id": "services",
+          "name": "服务消费",
+          "panel": "economy"
+        },
+        {
+          "id": "goods",
+          "name": "商品消费",
+          "panel": "economy"
+        },
+        {
+          "id": "business",
+          "name": "企业投资",
+          "panel": "economy"
+        },
+        {
+          "id": "banks",
+          "name": "银行与信用",
+          "panel": "economy"
+        }
+      ],
+      "stocks": [
+        {
+          "ticker": "MC.PA",
+          "group": "goods",
+          "name": "LVMH 路威酩轩",
+          "business": "时装皮具、珠宝腕表、酒类和美妆零售；时装皮具是核心利润来源。全球经营：欧洲、美国、日本及其他亚洲市场均为主要销售区域。",
+          "limitations": "奢侈品及高收入客群权重较高；中国消费和旅游购物敏感",
+          "sources": [
+            "https://www.lvmh.com/en/publications/solid-performance-in-a-disrupted-global-economic-and-geopolitical-environment"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Paris",
+          "market": "XPAR",
+          "stooq": "mc.pa",
+          "selection_market_cap_usd": 223041468672,
+          "selection_market_cap_time": "2026-09-25T15:35:45+00:00",
+          "selection_average_turnover_usd": 231037039,
+          "global_operations": "欧洲、美国、日本及其他亚洲市场均为主要销售区域",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "NESN.SW",
+          "group": "goods",
+          "name": "雀巢",
+          "business": "咖啡、宠物食品、营养和包装食品的销量、定价与品牌利润。全球经营：美洲、欧洲及亚洲大洋洲非洲均有实质销售。",
+          "limitations": "必需消费为主，原料成本、渠道库存和产品事件会扰动利润",
+          "sources": [
+            "https://www.nestle.com/investors/annual-report/facts-figures"
+          ],
+          "currency": "CHF",
+          "timezone": "Europe/Zurich",
+          "market": "XSWX",
+          "stooq": "nesn.sw",
+          "selection_market_cap_usd": 239646883737,
+          "selection_market_cap_time": "2026-09-25T15:30:53+00:00",
+          "selection_average_turnover_usd": 297458910,
+          "global_operations": "美洲、欧洲及亚洲大洋洲非洲均有实质销售",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "ULVR.L",
+          "group": "goods",
+          "name": "联合利华",
+          "business": "美容健康、个人护理、家居护理和食品品牌的销售与利润。全球经营：亚太非洲、美洲、欧洲均为重要销售区域。",
+          "limitations": "冰淇淋业务已分拆；食品业务交易可能改变未来结构",
+          "sources": [
+            "https://www.unilever.com/files/esef-nl-2025.html"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "ulvr.l",
+          "selection_market_cap_usd": 133111837998,
+          "selection_market_cap_time": "2026-09-25T16:15:00+00:00",
+          "selection_average_turnover_usd": 222254130,
+          "global_operations": "亚太非洲、美洲、欧洲均为重要销售区域",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "OR.PA",
+          "group": "goods",
+          "name": "欧莱雅",
+          "business": "大众、专业、奢华和皮肤科学美容产品；品牌毛利和销售费用驱动利润。全球经营：欧洲、北美、北亚及其他新兴市场均有实质收入。",
+          "limitations": "美容科技工具不是主要最终需求；消费档次和渠道组合影响利润",
+          "sources": [
+            "https://www.loreal-finance.com/eng/press-release/2025-annual-results"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Paris",
+          "market": "XPAR",
+          "stooq": "or.pa",
+          "selection_market_cap_usd": 231778495762,
+          "selection_market_cap_time": "2026-09-25T15:35:14+00:00",
+          "selection_average_turnover_usd": 137381205,
+          "global_operations": "欧洲、北美、北亚及其他新兴市场均有实质收入",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "7203.T",
+          "group": "goods",
+          "name": "丰田汽车",
+          "business": "汽车生产销售及配套金融；汽车销量、产品结构和制造利润为主。全球经营：日本、北美、欧洲、亚洲及其他市场。",
+          "limitations": "汽车金融和商用车使其并非纯居民消费；汇率、关税和混动周期重要",
+          "sources": [
+            "https://global.toyota/pages/global_toyota/ir/financial-results/2026_4q_summary_en.pdf"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "7203.t",
+          "selection_market_cap_usd": 226567443710,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 550796539,
+          "global_operations": "日本、北美、欧洲、亚洲及其他市场",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "NKE",
+          "group": "goods",
+          "name": "耐克",
+          "business": "运动鞋服、器材的批发及直营销售；品牌、折扣和渠道组合驱动利润。全球经营：北美、欧洲中东非洲、大中华区、亚太拉美。",
+          "limitations": "自身品牌和渠道调整可能强于宏观需求变化",
+          "sources": [
+            "https://investors.nike.com/investors/news-events-and-reports/investor-news/investor-news-details/2026/NIKE-Inc--Reports-Fiscal-2026-Fourth-Quarter-and-Full-Year-Results/default.aspx"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "nke.us",
+          "selection_market_cap_usd": 53035081728,
+          "selection_market_cap_time": "2026-09-25T20:00:02+00:00",
+          "selection_average_turnover_usd": 984168721,
+          "global_operations": "北美、欧洲中东非洲、大中华区、亚太拉美",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "ADS.DE",
+          "group": "goods",
+          "name": "阿迪达斯",
+          "business": "运动鞋服及配饰；批发、直营渠道的销量与毛利。全球经营：欧洲、北美、大中华区、拉美及亚洲其他地区。",
+          "limitations": "运动潮流、品牌份额及渠道库存会影响表现",
+          "sources": [
+            "https://report.adidas-group.com/2025/en/consolidated-financial-statements/notes/additional-information/segmental-information.html"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Berlin",
+          "market": "XETR",
+          "stooq": "ads.de",
+          "selection_market_cap_usd": 29239817300,
+          "selection_market_cap_time": "2026-09-25T15:35:20+00:00",
+          "selection_average_turnover_usd": 117808833,
+          "global_operations": "欧洲、北美、大中华区、拉美及亚洲其他地区",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "KO",
+          "group": "goods",
+          "name": "可口可乐",
+          "business": "饮料浓缩液、糖浆及部分成品饮料；品牌和装瓶体系产生利润。全球经营：北美、拉美、欧洲中东非洲、亚太。",
+          "limitations": "浓缩液与装瓶模式并存，不能将营业收入直接等同终端零售额",
+          "sources": [
+            "https://investors.coca-colacompany.com/about/segments"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "ko.us",
+          "selection_market_cap_usd": 377806815232,
+          "selection_market_cap_time": "2026-09-25T20:00:02+00:00",
+          "selection_average_turnover_usd": 1404390991,
+          "global_operations": "北美、拉美、欧洲中东非洲、亚太",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "CL",
+          "group": "goods",
+          "name": "高露洁棕榄",
+          "business": "口腔、个人及家居护理，加上Hill’s宠物营养。全球经营：北美、拉美、欧洲、亚太和非洲欧亚市场。",
+          "limitations": "必需品和宠物消费占比较高；原料、营销和定价亦影响盈利",
+          "sources": [
+            "https://investor.colgatepalmolive.com/static-files/11e798a6-4c1d-42a0-bb4e-a211cf629a9f"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "cl.us",
+          "selection_market_cap_usd": 68604690432,
+          "selection_market_cap_time": "2026-09-25T20:00:02+00:00",
+          "selection_average_turnover_usd": 403875621,
+          "global_operations": "北美、拉美、欧洲、亚太和非洲欧亚市场",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "MDLZ",
+          "group": "goods",
+          "name": "亿滋国际",
+          "business": "饼干、巧克力及零食；销量、定价和原料成本驱动利润。全球经营：欧洲、北美、亚洲中东非洲、拉美。",
+          "limitations": "可可成本和提价会让收入与实际消费量分化",
+          "sources": [
+            "https://ir.mondelezinternational.com/news-releases/news-release-details/mondelez-international-reports-q4-and-fy-2025-results"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "mdlz.us",
+          "selection_market_cap_usd": 77339901952,
+          "selection_market_cap_time": "2026-09-25T20:00:01+00:00",
+          "selection_average_turnover_usd": 507692468,
+          "global_operations": "欧洲、北美、亚洲中东非洲、拉美",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "RACE.MI",
+          "group": "goods",
+          "name": "法拉利",
+          "business": "豪华跑车、个性化选配；另有赞助、品牌和赛车相关收入。全球经营：欧洲中东非洲、美洲、中国及其他亚太市场。",
+          "limitations": "供给受控、订单周期长，更多观察全球富裕客群；地域证据含2024年度披露",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1648416/000164841625000016/fnvfy2024resultspr.htm"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Rome",
+          "market": "XMIL",
+          "stooq": "race.mi",
+          "selection_market_cap_usd": 71485931591,
+          "selection_market_cap_time": "2026-09-25T15:35:18+00:00",
+          "selection_average_turnover_usd": 178174095,
+          "global_operations": "欧洲中东非洲、美洲、中国及其他亚太市场",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "ABI.BR",
+          "group": "goods",
+          "name": "百威英博",
+          "business": "全球啤酒及其他饮料品牌；销量、价格组合和酿造分销利润。全球经营：北美、中美洲、南美、欧洲中东非洲、亚太。",
+          "limitations": "拉美市场和啤酒消费较突出；负债和原料价格影响股价",
+          "sources": [
+            "https://www.ab-inbev.com/investors/results-center"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Brussels",
+          "market": "XBRU",
+          "stooq": "abi.br",
+          "selection_market_cap_usd": 151941859729,
+          "selection_market_cap_time": "2026-09-25T15:36:43+00:00",
+          "selection_average_turnover_usd": 131094866,
+          "global_operations": "北美、中美洲、南美、欧洲中东非洲、亚太",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "MCD",
+          "group": "services",
+          "name": "麦当劳",
+          "business": "餐厅直营收入与加盟租金、特许权费；加盟业务贡献主要餐厅利润。全球经营：美国、欧洲、澳大利亚及其他国际加盟市场。",
+          "limitations": "租金和加盟费为主，收入确认不等同全系统餐饮消费额",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "mcd.us",
+          "selection_market_cap_usd": 167357218816,
+          "selection_market_cap_time": "2026-09-25T20:00:03+00:00",
+          "selection_average_turnover_usd": 1157352246,
+          "global_operations": "美国、欧洲、澳大利亚及其他国际加盟市场",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "SBUX",
+          "group": "services",
+          "name": "星巴克",
+          "business": "咖啡餐饮直营销售、授权产品和特许权费。全球经营：北美为最大市场，亚洲及其他国际市场有实质业务。",
+          "limitations": "北美权重较高；中国门店转合资授权后收入确认变化，不以门店数代替收入占比",
+          "sources": [
+            "https://investor.starbucks.com/news/financial-releases/news-details/2026/Starbucks-Reports-Q3-Fiscal-Year-2026-Results/default.aspx"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "sbux.us",
+          "selection_market_cap_usd": 108140404736,
+          "selection_market_cap_time": "2026-09-25T20:00:00+00:00",
+          "selection_average_turnover_usd": 655969137,
+          "global_operations": "北美为最大市场，亚洲及其他国际市场有实质业务",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "HLT",
+          "group": "services",
+          "name": "希尔顿",
+          "business": "酒店管理及加盟费、品牌授权；入住率与房价带动收费利润。全球经营：美国以外在欧洲、亚洲及中东等地区经营酒店网络。",
+          "limitations": "美国仍较大；酒店数量不等同利润地域权重",
+          "sources": [
+            "https://ir.hilton.com/sec-filings/all-sec-filings/content/0001585689-26-000007/hlt-20251231.htm"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "hlt.us",
+          "selection_market_cap_usd": 70661373952,
+          "selection_market_cap_time": "2026-09-25T20:00:03+00:00",
+          "selection_average_turnover_usd": 602184071,
+          "global_operations": "美国以外在欧洲、亚洲及中东等地区经营酒店网络",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "BKNG",
+          "group": "services",
+          "name": "Booking 旅游预订",
+          "business": "酒店及旅行预订的佣金、商户差价和广告；住宿交易驱动利润。全球经营：欧洲的Booking.com、亚洲的Agoda及美国等市场。",
+          "limitations": "欧洲权重较高；使用AI改善搜索不等于销售AI基础设施，渠道竞争仍影响利润",
+          "sources": [
+            "https://ir.bookingholdings.com/financials/annual-reports/"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "bkng.us",
+          "selection_market_cap_usd": 123188830208,
+          "selection_market_cap_time": "2026-09-25T20:00:01+00:00",
+          "selection_average_turnover_usd": 1108680233,
+          "global_operations": "欧洲的Booking.com、亚洲的Agoda及美国等市场",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "AC.PA",
+          "group": "services",
+          "name": "雅高酒店",
+          "business": "酒店管理、加盟与相关服务；收费利润随入住率、房价和网络增长变化。全球经营：欧洲、美洲、中东非洲、亚太经营网络。",
+          "limitations": "有奢华酒店及商务出行需求，不仅是居民旅游",
+          "sources": [
+            "https://group.accor.com/en/news-stories/accor-full-year-2025-results"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Paris",
+          "market": "XPAR",
+          "stooq": "ac.pa",
+          "selection_market_cap_usd": 11999422547,
+          "selection_market_cap_time": "2026-09-25T15:38:02+00:00",
+          "selection_average_turnover_usd": 35271034,
+          "global_operations": "欧洲、美洲、中东非洲、亚太经营网络",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "RCL",
+          "group": "services",
+          "name": "皇家加勒比",
+          "business": "邮轮船票与船上消费；客流、票价和运力利用率驱动利润。全球经营：北美客群较重，同时在欧洲、亚洲等市场销售和运营航线。",
+          "limitations": "航线覆盖不等同客源均衡；燃油、船舶投资和运力变化影响较大",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/884887/000088488726000007/rcl-20251231.htm"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "rcl.us",
+          "selection_market_cap_usd": 64910618624,
+          "selection_market_cap_time": "2026-09-25T20:00:02+00:00",
+          "selection_average_turnover_usd": 558121414,
+          "global_operations": "北美客群较重，同时在欧洲、亚洲等市场销售和运营航线",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "IAG.L",
+          "group": "services",
+          "name": "国际航空集团",
+          "business": "英航、伊比利亚等客运及货运；票价、载客率和航线利润。全球经营：欧洲、北大西洋、拉美及其他国际航线。",
+          "limitations": "欧洲枢纽跨境网络，非全球均衡消费；油价和航空供给也影响利润",
+          "sources": [
+            "https://www.iairgroup.com/media/iag-annual-report-and-accounts-2025-cnmv-esef.htm"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "iag.l",
+          "selection_market_cap_usd": 25235155962,
+          "selection_market_cap_time": "2026-09-25T16:15:00+00:00",
+          "selection_average_turnover_usd": 66365607,
+          "global_operations": "欧洲、北大西洋、拉美及其他国际航线",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "FME.DE",
+          "group": "services",
+          "name": "费森尤斯医疗",
+          "business": "肾脏透析医疗服务为主，并销售透析设备耗材。全球经营：美国是核心市场，同时覆盖欧洲、拉美及亚太。",
+          "limitations": "医疗服务与医疗产品混合；医保支付和监管使其不纯粹反映自费消费",
+          "sources": [
+            "https://freseniusmedicalcare.com/en/annual-report/"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Berlin",
+          "market": "XETR",
+          "stooq": "fme.de",
+          "selection_market_cap_usd": 12074987718,
+          "selection_market_cap_time": "2026-09-25T15:36:55+00:00",
+          "selection_average_turnover_usd": 35665793,
+          "global_operations": "美国是核心市场，同时覆盖欧洲、拉美及亚太",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "AGCO",
+          "group": "business",
+          "name": "爱科农机",
+          "business": "拖拉机、收割机及农机配件；设备销售和服务利润。全球经营：欧洲中东、北美、拉美及亚太非洲。",
+          "limitations": "农户资本开支为主；精准农业含智能功能，但不以AI算力建设为需求端",
+          "sources": [
+            "https://news.agcocorp.com/2026-07-30-AGCO-REPORTS-SECOND-QUARTER-RESULTS"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "agco.us",
+          "selection_market_cap_usd": 8265144320,
+          "selection_market_cap_time": "2026-09-25T20:00:03+00:00",
+          "selection_average_turnover_usd": 117510508,
+          "global_operations": "欧洲中东、北美、拉美及亚太非洲",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "CNH",
+          "group": "business",
+          "name": "凯斯纽荷兰",
+          "business": "农业和工程机械及配套金融；农业机械是主要业务。全球经营：北美、欧洲中东非洲、南美、亚太。",
+          "limitations": "农产品价格、经销商库存及融资影响显著；自动化农机不等同AI基建需求",
+          "sources": [
+            "https://investors.cnh.com/news/news-details/2026/CNH-Industrial-N-V--Reports-Second-Quarter-2026-Results/default.aspx"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "cnh.us",
+          "selection_market_cap_usd": 21050798080,
+          "selection_market_cap_time": "2026-09-25T20:00:03+00:00",
+          "selection_average_turnover_usd": 229498946,
+          "global_operations": "北美、欧洲中东非洲、南美、亚太",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "6301.T",
+          "group": "business",
+          "name": "小松",
+          "business": "工程矿山设备及零部件服务；新机销售和存量设备运营共同产生利润。全球经营：日本、北美、欧洲、亚洲及矿业资源地区。",
+          "limitations": "矿山、建筑及公共工程混合，部分矿业需求可能间接受电气化影响",
+          "sources": [
+            "https://www.komatsu.jp/en/-/media/home/ir/library/financial/en/2703q1_e.pdf?hash=30214C1FA2FDBD6CD0E81676CC8E1C1D&rev=70184c178fc34f7580daac7921e815ea"
+          ],
+          "currency": "JPY",
+          "timezone": "Asia/Tokyo",
+          "market": "XTKS",
+          "stooq": "6301.t",
+          "selection_market_cap_usd": 43396621350,
+          "selection_market_cap_time": "2026-09-25T06:30:00+00:00",
+          "selection_average_turnover_usd": 149557266,
+          "global_operations": "日本、北美、欧洲、亚洲及矿业资源地区",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "SAND.ST",
+          "group": "business",
+          "name": "山特维克",
+          "business": "矿山设备、岩石处理与金属切削刀具；设备及售后利润。全球经营：欧洲、北美、亚洲及非洲南美矿业市场。",
+          "limitations": "工业投资与耗材更新混合；矿产及自动化可含间接AI影响，非机房建设主力",
+          "sources": [
+            "https://www.annualreport.sandvik/en/2025/financial-information/consolidated-notes/categories-of-revenue.html"
+          ],
+          "currency": "SEK",
+          "timezone": "Europe/Stockholm",
+          "market": "XSTO",
+          "stooq": "sand.st",
+          "selection_market_cap_usd": 47842529608,
+          "selection_market_cap_time": "2026-09-25T15:29:59+00:00",
+          "selection_average_turnover_usd": 67145517,
+          "global_operations": "欧洲、北美、亚洲及非洲南美矿业市场",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "EPI-A.ST",
+          "group": "business",
+          "name": "安百拓",
+          "business": "采矿凿岩设备、工具、配件及服务；矿山投资和存量设备维护。全球经营：美洲、欧洲、亚洲及非洲澳洲资源市场。",
+          "limitations": "矿业周期权重高；自动化矿山和金属需求不作零AI间接影响保证",
+          "sources": [
+            "https://reports.epirocgroup.com/annual-and-sustainability-report-2025/financial-information/group-notes/note-4-segment-information-and-revenues/"
+          ],
+          "currency": "SEK",
+          "timezone": "Europe/Stockholm",
+          "market": "XSTO",
+          "stooq": "epi-a.st",
+          "selection_market_cap_usd": 31765969682,
+          "selection_market_cap_time": "2026-09-25T15:29:48+00:00",
+          "selection_average_turnover_usd": 34621702,
+          "global_operations": "美洲、欧洲、亚洲及非洲澳洲资源市场",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "METSO.HE",
+          "group": "business",
+          "name": "美卓",
+          "business": "矿物加工、骨料设备及售后；矿山扩产、设备更新与服务利润。全球经营：北中美、南美、欧洲中亚、非洲、亚洲及大洋洲。",
+          "limitations": "矿业投资及维修耗材混合，不能看成所有行业企业资本开支",
+          "sources": [
+            "https://www.metso.com/globalassets/investors/reports/2025/ixbrl-viewer-en.htm"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Helsinki",
+          "market": "XHEL",
+          "stooq": "metso.he",
+          "selection_market_cap_usd": 16125777538,
+          "selection_market_cap_time": "2026-09-25T15:29:45+00:00",
+          "selection_average_turnover_usd": 23206955,
+          "global_operations": "北中美、南美、欧洲中亚、非洲、亚洲及大洋洲",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "KNEBV.HE",
+          "group": "business",
+          "name": "通力电梯",
+          "business": "电梯扶梯新设备、改造和维保；存量服务对利润很重要。全球经营：欧洲、美洲、中国及其他亚太中东非洲。",
+          "limitations": "与建筑投资及维保同时相关；不是纯新增资本开支，房地产周期影响较大",
+          "sources": [
+            "https://www.kone.com/en/Images/KONE_Annual%20Review_2025_tcm17-141619.pdf"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Helsinki",
+          "market": "XHEL",
+          "stooq": "knebv.he",
+          "selection_market_cap_usd": 30431102937,
+          "selection_market_cap_time": "2026-09-25T15:29:51+00:00",
+          "selection_average_turnover_usd": 38710018,
+          "global_operations": "欧洲、美洲、中国及其他亚太中东非洲",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "TKR",
+          "group": "business",
+          "name": "铁姆肯",
+          "business": "工程轴承、工业传动及相关零部件服务；工业设备制造和维护需求。全球经营：美国、欧洲、亚洲及其他海外工业市场。",
+          "limitations": "包含航空、电力和自动化客户；未发现披露显示AI终端需求成为主要增长驱动，不认证零暴露",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/98362/000009836226000048/tkrq22026exhibit991.htm"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "tkr.us",
+          "selection_market_cap_usd": 8162130432,
+          "selection_market_cap_time": "2026-09-25T20:00:02+00:00",
+          "selection_average_turnover_usd": 108469421,
+          "global_operations": "美国、欧洲、亚洲及其他海外工业市场",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "C",
+          "group": "banks",
+          "name": "花旗集团",
+          "business": "跨境交易银行、信贷、市场交易和财富管理；净利息及手续费利润。全球经营：美国和全球跨境企业客户网络，Services覆盖90多个国家。",
+          "limitations": "含资本市场交易利润，不是纯贷款周期；借款人可能涉及AI行业",
+          "sources": [
+            "https://www.citigroup.com/rcs/citigpa/storage/public/Annual_Report/2025/citi-2025-annual-report.pdf"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "c.us",
+          "selection_market_cap_usd": 225246216192,
+          "selection_market_cap_time": "2026-09-25T20:03:58+00:00",
+          "selection_average_turnover_usd": 1431919353,
+          "global_operations": "美国和全球跨境企业客户网络，Services覆盖90多个国家",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "HSBA.L",
+          "group": "banks",
+          "name": "汇丰控股",
+          "business": "香港及英国银行业务、国际财富和企业机构银行；净息差与手续费。全球经营：香港、英国及亚洲、中东等国际网络。",
+          "limitations": "香港和英国是利润核心，并非地区等权；未披露底层AI信贷比例",
+          "sources": [
+            "https://www.hsbc.com/investors/results-and-announcements/annual-report"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "hsba.l",
+          "selection_market_cap_usd": 342836307619,
+          "selection_market_cap_time": "2026-09-25T15:47:37+00:00",
+          "selection_average_turnover_usd": 440767861,
+          "global_operations": "香港、英国及亚洲、中东等国际网络",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "SAN.MC",
+          "group": "banks",
+          "name": "桑坦德银行",
+          "business": "零售、消费金融、企业银行及财富业务；贷款利差和手续费。全球经营：欧洲、北美与南美均有重要利润贡献。",
+          "limitations": "西班牙、英国、美国、墨西哥、巴西等周期不同；底层信贷非零AI保证",
+          "sources": [
+            "https://www.santander.com/content/dam/santander-com/en/documentos/informacion-sobre-resultados-semestrales-y-anuales-suministrada-a-la-sec/2026/sec-2025-annual-20-f-2025-en.pdf"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Madrid",
+          "market": "XMAD",
+          "stooq": "san.mc",
+          "selection_market_cap_usd": 207781857172,
+          "selection_market_cap_time": "2026-09-25T15:42:08+00:00",
+          "selection_average_turnover_usd": 296771374,
+          "global_operations": "欧洲、北美与南美均有重要利润贡献",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "BBVA.MC",
+          "group": "banks",
+          "name": "西班牙对外银行",
+          "business": "零售及企业贷款、支付和其他金融服务；净利息和手续费。全球经营：西班牙、墨西哥、土耳其、南美等经营市场。",
+          "limitations": "墨西哥和西班牙利润权重较高；土耳其通胀会影响会计数字",
+          "sources": [
+            "https://shareholdersandinvestors.bbva.com/informes/shareholders-report-2q26/"
+          ],
+          "currency": "EUR",
+          "timezone": "Europe/Madrid",
+          "market": "XMAD",
+          "stooq": "bbva.mc",
+          "selection_market_cap_usd": 158744326904,
+          "selection_market_cap_time": "2026-09-25T15:39:53+00:00",
+          "selection_average_turnover_usd": 203311956,
+          "global_operations": "西班牙、墨西哥、土耳其、南美等经营市场",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "BARC.L",
+          "group": "banks",
+          "name": "巴克莱银行",
+          "business": "英国银行、全球投资银行、美国信用卡及财富管理。全球经营：英国、美国及国际批发银行市场。",
+          "limitations": "英美集中、投行周期敏感，不代表全球居民信贷均衡；底层AI敞口未量化",
+          "sources": [
+            "https://data.fca.org.uk/artefacts/NSM/DirectUpload/NI-000149267/NI-000149267.pdf"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "barc.l",
+          "selection_market_cap_usd": 82254712523,
+          "selection_market_cap_time": "2026-09-25T16:15:00+00:00",
+          "selection_average_turnover_usd": 236195621,
+          "global_operations": "英国、美国及国际批发银行市场",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "STAN.L",
+          "group": "banks",
+          "name": "渣打集团",
+          "business": "跨境企业金融、交易银行与财富业务；净息差、市场和财富收费。全球经营：亚洲、非洲及中东，连接欧美跨境客户。",
+          "limitations": "亚洲及跨境企业业务权重高；不能视作各国银行业等权",
+          "sources": [
+            "https://www.sc.com/en/investors/financial-results/annual-report"
+          ],
+          "currency": "GBp",
+          "timezone": "Europe/London",
+          "market": "XLON",
+          "stooq": "stan.l",
+          "selection_market_cap_usd": 66703414838,
+          "selection_market_cap_time": "2026-09-25T16:15:55+00:00",
+          "selection_average_turnover_usd": 169787545,
+          "global_operations": "亚洲、非洲及中东，连接欧美跨境客户",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        }
+      ]
+    },
+    {
       "id": "global_ai",
       "name": "全球 AI",
       "title": "全球 AI 股票表现",
@@ -3341,6 +4052,55 @@
     "ABBNY": "ABB Ltd",
     "GOOG": "Alphabet Inc.",
     "TOELY": "Tokyo Electron Limited",
-    "ATEYY": "Advantest Corporation"
+    "ATEYY": "Advantest Corporation",
+    "MC.PA": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
+    "NESN.SW": "Nestlé S.A.",
+    "ULVR.L": "Unilever PLC",
+    "OR.PA": "L'Oréal S.A.",
+    "7203.T": "Toyota Motor Corporation",
+    "NKE": "NIKE, Inc.",
+    "ADS.DE": "adidas AG",
+    "KO": "The Coca-Cola Company",
+    "CL": "Colgate-Palmolive Company",
+    "MDLZ": "Mondelez International, Inc.",
+    "RACE.MI": "Ferrari N.V.",
+    "ABI.BR": "Anheuser-Busch InBev SA/NV",
+    "MCD": "McDonald's Corporation",
+    "SBUX": "Starbucks Corporation",
+    "HLT": "Hilton Worldwide Holdings Inc.",
+    "BKNG": "Booking Holdings Inc.",
+    "AC.PA": "Accor SA",
+    "RCL": "Royal Caribbean Cruises Ltd.",
+    "IAG.L": "International Consolidated Airlines Group S.A.",
+    "FME.DE": "Fresenius Medical Care AG",
+    "AGCO": "AGCO Corporation",
+    "CNH": "CNH Industrial N.V.",
+    "6301.T": "Komatsu Ltd.",
+    "SAND.ST": "Sandvik AB (publ)",
+    "EPI-A.ST": "Epiroc AB (publ)",
+    "METSO.HE": "Metso Oyj",
+    "KNEBV.HE": "KONE Oyj",
+    "TKR": "The Timken Company",
+    "C": "Citigroup Inc.",
+    "HSBA.L": "HSBC Holdings plc",
+    "SAN.MC": "Banco Santander, S.A.",
+    "BBVA.MC": "Banco Bilbao Vizcaya Argentaria, S.A.",
+    "BARC.L": "Barclays PLC",
+    "STAN.L": "Standard Chartered PLC",
+    "LVMUY": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne",
+    "NSRGY": "Nestlé S.A.",
+    "UL": "Unilever PLC",
+    "TM": "Toyota Motor Corporation",
+    "RACE": "Ferrari N.V.",
+    "BUD": "Anheuser-Busch InBev SA/NV",
+    "FMS": "Fresenius Medical Care AG",
+    "HSBC": "HSBC Holdings plc",
+    "0005.HK": "HSBC Holdings plc",
+    "SAN": "Banco Santander, S.A.",
+    "BBVA": "Banco Bilbao Vizcaya Argentaria, S.A.",
+    "BCS": "Barclays PLC",
+    "2888.HK": "Standard Chartered PLC",
+    "KNYJY": "KONE Oyj",
+    "EPI-B.ST": "Epiroc AB (publ)"
   }
 }
