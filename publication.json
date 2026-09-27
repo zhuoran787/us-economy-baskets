@@ -1,10 +1,10 @@
 {
   "as_of": "2026-09-25",
   "history_start": "2024-03-27",
-  "config_hash": "7a341e351f64399990f7370a0819afbf38e670f404214d385c78b20a9bd71856",
-  "html_sha256": "7eb9ba820a76667d9aabf847f890045fbc2053e0f2538b23c288410528925286",
+  "config_hash": "72c49a7ad716762fbfcdab41da28ca378fa8f7b98ed641119a25613e86bb9a28",
+  "html_sha256": "af1b965028e5a83607ea278b92013e2aa769924796d35a957a56d3ac15d5d137",
   "baskets": 30,
-  "stocks": 271,
+  "stocks": 273,
   "regions": [
     {
       "id": "us",
@@ -38,7 +38,7 @@
       "id": "global_economy",
       "as_of": "2026-09-25",
       "baskets": 4,
-      "stocks": 34,
+      "stocks": 36,
       "carried_days": 7
     },
     {
@@ -74,9 +74,9 @@
     }
   ],
   "membership_audit": {
-    "stock_memberships": 271,
-    "unique_tickers": 271,
-    "unique_issuers": 271,
+    "stock_memberships": 273,
+    "unique_tickers": 273,
+    "unique_issuers": 273,
     "duplicate_tickers": 0,
     "duplicate_issuers": 0
   }

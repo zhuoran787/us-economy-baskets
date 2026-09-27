@@ -2805,8 +2805,8 @@
       "id": "global_economy",
       "name": "全球传统经济",
       "title": "全球化公司：传统经济股票表现",
-      "panel_name": "商品消费 · 服务消费 · 企业投资 · 银行与信用",
-      "note": "仅纳入经营实质跨越多个主要经济区域的全球化公司，不是从各国各挑本地公司。与全站现有篮子按公司去重，因此是补充观察组，非完整全球指数。住宅投资暂缺：本次未找到足够同时满足全球化、低直接AI需求和不重合条件的代表公司。各股本币收益等权，不按国家或GDP加权。",
+      "panel_name": "服务消费 · 商品消费 · 企业投资 · 全球银行、支付与信用",
+      "note": "仅纳入经营实质跨越多个主要经济区域的全球化公司，不是从各国各挑本地公司。与全站现有篮子按公司去重，因此是补充观察组，非完整全球指数。住宅投资暂缺：本次未找到足够同时满足全球化、低直接AI需求和不重合条件的代表公司。各股本币收益等权，不按国家或GDP加权。 银行、支付与信用篮子结合跨国银行及全球支付网络，观察融资条件与消费交易活动，不是全球信贷指数。",
       "groups": [
         {
           "id": "services",
@@ -2825,7 +2825,7 @@
         },
         {
           "id": "banks",
-          "name": "银行与信用",
+          "name": "全球银行、支付与信用",
           "panel": "economy"
         }
       ],
@@ -3509,6 +3509,46 @@
           "global_operations": "亚洲、非洲及中东，连接欧美跨境客户",
           "global_review_date": "2026-09-26",
           "ai_screen": "未将AI终端需求视为主要收入和利润驱动；不等同量化认证零间接AI敞口"
+        },
+        {
+          "ticker": "V",
+          "group": "banks",
+          "name": "Visa 维萨",
+          "business": "支付服务、数据处理、跨境交易及增值服务收费；交易金额、笔数和跨境消费是主要收入利润驱动",
+          "limitations": "支付网络而非存贷款银行；反映消费支付和跨境交易，不能将支付收入等同银行利差或信贷扩张。监管、客户激励及支付技术竞争也影响利润。",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000077/q42025earningsrelease.htm"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "v.us",
+          "selection_market_cap_usd": 689702764544,
+          "selection_market_cap_time": "2026-09-25T20:00:02+00:00",
+          "selection_average_turnover_usd": 2628033726,
+          "global_operations": "美国与美国以外的欧洲、亚太、拉美等市场均有实质支付业务及收入",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "AI用于风控、安全与支付创新；披露的主要增长驱动仍为支付与跨境交易，未将AI终端需求视为主要收入驱动；不认证零AI敞口"
+        },
+        {
+          "ticker": "MA",
+          "group": "banks",
+          "name": "Mastercard 万事达",
+          "business": "支付网络与增值服务收费；交易金额、跨境交易和笔数带动收入，增值服务包括安全、数据分析和咨询",
+          "limitations": "支付网络而非存贷款银行；反映消费支付和跨境交易，不能将支付收入等同银行利差或信贷扩张。监管、客户激励及支付技术竞争也影响利润。",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
+          ],
+          "currency": "USD",
+          "timezone": "America/New_York",
+          "market": "US",
+          "stooq": "ma.us",
+          "selection_market_cap_usd": 497267048448,
+          "selection_market_cap_time": "2026-09-25T20:00:03+00:00",
+          "selection_average_turnover_usd": 1679304539,
+          "global_operations": "美国与美国以外的欧洲、亚太、拉美等市场均有实质支付业务及收入",
+          "global_review_date": "2026-09-26",
+          "ai_screen": "AI用于风控、安全与支付创新；披露的主要增长驱动仍为支付与跨境交易，未将AI终端需求视为主要收入驱动；不认证零AI敞口"
         }
       ]
     },
@@ -4101,6 +4141,8 @@
     "BCS": "Barclays PLC",
     "2888.HK": "Standard Chartered PLC",
     "KNYJY": "KONE Oyj",
-    "EPI-B.ST": "Epiroc AB (publ)"
+    "EPI-B.ST": "Epiroc AB (publ)",
+    "V": "Visa Inc.",
+    "MA": "Mastercard Incorporated"
   }
 }
