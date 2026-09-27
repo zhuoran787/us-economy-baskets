@@ -170,7 +170,6 @@
       "boundary": "数据中心电气冷却、机电工程、电网及发电设备；多数仍包含传统需求，AI独立利润未单列。BE含燃料电池与项目执行风险，最近年度GAAP净亏损。"
     }
   ],
-  "calendar_reference": "SPY",
   "constituent_corrections": [
     {
       "old": [
@@ -351,7 +350,11 @@
       "cron": "30 17 * * 1-5",
       "timezone": "America/New_York",
       "label": "纽约时间每个工作日17:30（收盘后）"
-    }
+    },
+    "refresh_retry_delays_seconds": [
+      60,
+      60
+    ]
   },
   "regional_markets": {
     "XSES": {

@@ -1,42 +1,42 @@
 {
-  "as_of": "2026-09-24",
+  "as_of": "2026-09-25",
   "history_start": "2024-03-27",
-  "config_hash": "2f39cadeca3eac8316c82f29e0fc9d2f1212aef6362575db2b6f65c2e70e76b8",
-  "html_sha256": "c3502149d80d1b35989f7c6d5f1b90df480fba9417f4472f75ab16f510833e94",
+  "config_hash": "b37791584fb4d4cf9342109d8bec2fa940bb7d84fefb3b3942e21f9af37d6228",
+  "html_sha256": "cd2f6bd06b7aa7eb0df780dd4f091a28a6ad720635931cd0a8996ece2912c6d8",
   "baskets": 26,
   "stocks": 237,
   "regions": [
     {
       "id": "us",
-      "as_of": "2026-09-24",
+      "as_of": "2026-09-25",
       "baskets": 9,
       "stocks": 89,
       "carried_days": 0
     },
     {
       "id": "europe",
-      "as_of": "2026-09-24",
+      "as_of": "2026-09-25",
       "baskets": 5,
       "stocks": 44,
       "carried_days": 1
     },
     {
       "id": "japan",
-      "as_of": "2026-09-24",
+      "as_of": "2026-09-25",
       "baskets": 5,
       "stocks": 44,
       "carried_days": 0
     },
     {
       "id": "southeast_asia",
-      "as_of": "2026-09-24",
+      "as_of": "2026-09-25",
       "baskets": 5,
       "stocks": 44,
       "carried_days": 0
     },
     {
       "id": "global_ai",
-      "as_of": "2026-09-24",
+      "as_of": "2026-09-25",
       "baskets": 2,
       "stocks": 16,
       "carried_days": 1

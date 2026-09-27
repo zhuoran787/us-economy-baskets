@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Download, audit and render the approved baskets. Standard library only."""
+"""Download, audit and render the approved baskets. Using verified exchange sessions."""
 import argparse
 import concurrent.futures
 import datetime as dt
@@ -12,6 +12,7 @@ import time
 import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
+from market_calendar import sessions
 
 SKILL = pathlib.Path(__file__).resolve().parents[1]
 CONFIG = SKILL / 'assets/config.json'
@@ -99,7 +100,7 @@ def fetch(c, fingerprint, tickers, end):
     manifest = dict(config_hash=fingerprint, requested_end=end, history_start=c['history_start'], files=[])
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         futures = [pool.submit(fetch_one, t, c['history_start'], end, folder)
-                   for t in list(dict.fromkeys(tickers + [c['calendar_reference'], c['benchmark']['ticker']]))]
+                   for t in list(dict.fromkeys(tickers + [c['benchmark']['ticker']]))]
         for future in concurrent.futures.as_completed(futures):
             manifest['files'].append(future.result())
     write_json(folder / 'manifest.json', manifest)
@@ -240,18 +241,23 @@ def build(c, fingerprint, tickers, folder, visual=None):
         raise ValueError('config已改，先重新取数')
     receipts = {f['ticker']: f for f in manifest['files']}
     prices, primary_raw = {}, {}
-    for ticker in list(dict.fromkeys(tickers + [c['calendar_reference'], c['benchmark']['ticker']])):
+    for ticker in list(dict.fromkeys(tickers + [c['benchmark']['ticker']])):
         raw = (folder / (ticker + '.json')).read_bytes()
         if digest(raw) != receipts[ticker]['sha256']:
             raise ValueError(f'{ticker}: 原始数据指纹不匹配')
         prices[ticker] = parse_prices(raw, ticker, c['history_start'], manifest['requested_end'])
         primary_raw[ticker] = raw
-    dates = sorted(prices[c['calendar_reference']])
+    dates = sorted(sessions(c, 'US', c['history_start'], manifest['requested_end']))
+    if not dates:
+        raise ValueError('请求区间内没有美国交易日')
+    if all(dates[-1] not in prices[t] for t in tickers):
+        raise ValueError(f'行情源尚未提供全部美国成分的 {dates[-1]} 收盘价；稍后重试，保留旧页面')
     latest_listing = max((x['date'] for x in c.get('listing_starts', {}).values()), default=dates[0])
     if dates[0] < latest_listing:
         raise ValueError('统一历史起点早于全部成分开始交易日，请修改history_start后重新取数')
     expected = set(dates)
-    if (dt.date.fromisoformat(manifest['requested_end']) - dt.date.fromisoformat(dates[-1])).days > 4:
+    latest_observed = max(max(values) for values in prices.values() if values)
+    if (dt.date.fromisoformat(manifest['requested_end']) - dt.date.fromisoformat(latest_observed)).days > 4:
         raise ValueError('行情源明显滞后；不更新图形')
     output = pathlib.Path(c['output_dir'])
     listing_starts = c.get('listing_starts', {})
