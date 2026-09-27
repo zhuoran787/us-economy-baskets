@@ -7,6 +7,9 @@
     .basket-history .bh-region-header { margin-bottom:24px;padding:20px 24px;background:var(--card);border-left:5px solid var(--foreground); }
     .basket-history .bh-region-header h2 { margin:0 0 12px;font-size:28px;line-height:1.35;font-weight:700;overflow-wrap:anywhere; }
     .basket-history .bh-region-header [data-quality] { margin-top:6px; }
+    .bh-global-section > .basket-history { margin-top:28px; }
+    .bh-subsection-header { margin-bottom:16px; }
+    .bh-subsection-header h3 { margin:0 0 8px; }
     .basket-history [data-region-note]:not(:empty) { margin-bottom:16px; }
     @media(max-width:480px) {
       .basket-history[data-section-index] { margin-top:48px;padding-top:24px; }
@@ -55,16 +58,37 @@
   const original=document.getElementById('us-basket-history');
   const template=original.cloneNode(true);
   const nav=document.querySelector('[data-region-nav]');
+  const sectionNodes=new Map();
   reports.forEach((data,reportIndex)=>{
   const root=reportIndex===0?original:template.cloneNode(true);
   const region=data.region||'us';
+  const sectionId=data.section_id||region;
+  const grouped=sectionId!==region;
   root.id='baskets-'+region;
   root.setAttribute('role','region');
   root.setAttribute('aria-labelledby',root.id+'-title');
   root.querySelector('[data-title]').id=root.id+'-title';
-  if(reportIndex)root.dataset.sectionIndex=String(reportIndex);
-  if(reportIndex)original.parentNode.append(root);
-  const link=document.createElement('a');link.href='#'+root.id;link.textContent=data.region_name||'美国';nav.append(link);
+  if(grouped){
+    let parent=sectionNodes.get(sectionId);
+    if(!parent){
+      parent=document.createElement('section');parent.id='baskets-'+sectionId;
+      parent.className='basket-history bh-global-section';parent.dataset.sectionIndex=String(sectionNodes.size);
+      parent.setAttribute('aria-labelledby',parent.id+'-title');
+      const header=document.createElement('header');header.className='bh-region-header';
+      const title=document.createElement('h2');title.id=parent.id+'-title';title.textContent=data.section_name;
+      header.append(title);parent.append(header);original.parentNode.append(parent);sectionNodes.set(sectionId,parent);
+      const link=document.createElement('a');link.href='#'+parent.id;link.textContent=data.section_name;nav.append(link);
+    }
+    parent.append(root);
+    const header=root.querySelector('.bh-region-header');header.className='bh-subsection-header';
+    const oldTitle=root.querySelector('[data-title]'),title=document.createElement('h3');
+    title.id=oldTitle.id;title.dataset.title='';oldTitle.replaceWith(title);
+  }else{
+    if(reportIndex)root.dataset.sectionIndex=String(sectionNodes.size);
+    if(reportIndex)original.parentNode.append(root);
+    sectionNodes.set(sectionId,root);
+    const link=document.createElement('a');link.href='#'+root.id;link.textContent=data.section_name||data.region_name||'美国';nav.append(link);
+  }
   root.querySelector('[data-title]').textContent=data.title||'美国各经济板块股票表现';
   root.querySelector('[data-region-note]').textContent=data.region_note||'';
   root.querySelector('[data-currency]').textContent='每日等权收益 · 所选区间起点＝100 · '+(data.currency_note||'美元复权收盘价')+' · 未扣交易成本';
@@ -100,7 +124,7 @@
   });
   panels.forEach(panel=>{
     const section=document.createElement('section');section.className='bh-panel';
-    const heading=document.createElement('h3');heading.textContent=panel.name;section.append(heading);
+    const heading=document.createElement(grouped?'h4':'h3');heading.textContent=panel.name;section.append(heading);
     const legend=document.createElement('div');legend.className='bh-legend';section.append(legend);
     const plot=document.createElement('div');plot.className='bh-plot';
     const svg=d3.select(plot).append('svg').attr('class','bh-chart').attr('role','img').attr('aria-label',panel.name+'等权历史表现折线图');

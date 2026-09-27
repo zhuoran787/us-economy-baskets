@@ -1,8 +1,8 @@
 {
   "as_of": "2026-09-25",
   "history_start": "2024-03-27",
-  "config_hash": "7a341e351f64399990f7370a0819afbf38e670f404214d385c78b20a9bd71856",
-  "html_sha256": "1f4e4d13434e9cd5f63bd169f4a41d08ac88665ef323c5e42cd7c801fc2409a3",
+  "config_hash": "89872d74a3c95eee6e9e797e7e52fd12a5b637a274a22c9c29e8e5fb008e868d",
+  "html_sha256": "59e7afbc08144bc3d924307ee33d802a53873f4036a8669ff0473304486db333",
   "baskets": 30,
   "stocks": 271,
   "regions": [
@@ -51,6 +51,28 @@
   ],
   "carried_days": 9,
   "url": "https://zhuoran787.github.io/us-economy-baskets/",
+  "sections": [
+    {
+      "id": "us",
+      "name": "美国"
+    },
+    {
+      "id": "europe",
+      "name": "欧洲"
+    },
+    {
+      "id": "japan",
+      "name": "日本"
+    },
+    {
+      "id": "southeast_asia",
+      "name": "东南亚"
+    },
+    {
+      "id": "global",
+      "name": "全球"
+    }
+  ],
   "membership_audit": {
     "stock_memberships": 271,
     "unique_tickers": 271,

@@ -29,7 +29,17 @@ def export(target):
         if report['requested_end']!=data['requested_end'] or report['dates'][0]!=data['dates'][0]:
             raise ValueError('地区请求日期或起点不一致')
         report['region_name']=region['name'];reports.append(report)
-    for report in reports: report.pop('source_run',None)
+    # Several reports can belong to one visual section without mixing calendars,
+    # constituent lists, or return series. The global section is always last.
+    reports.sort(key=lambda r: r['region'].startswith('global_'))
+    sections=[]
+    for report in reports:
+        report.pop('source_run',None)
+        is_global=report['region'].startswith('global_')
+        report['section_id']='global' if is_global else report['region']
+        report['section_name']='全球' if is_global else report['region_name']
+        if not any(s['id']==report['section_id'] for s in sections):
+            sections.append(dict(id=report['section_id'],name=report['section_name']))
     source = (SKILL / 'assets/chart.html').read_text()
     source = source.replace('__BASKET_DATA__', json.dumps({'reports':reports}, ensure_ascii=False).replace('</', '<\\/'))
     d3 = (SKILL / 'assets/d3.min.js').read_text().replace('</script', '<\\/script')
@@ -39,7 +49,7 @@ def export(target):
     notice = config['publication']['schedule']['label']+'自动更新；当前数据截至'+data['as_of']+'。'+'；'.join(notes)
     source = source.replace('<details>', '<p class="text-small">'+html.escape(notice)+'</p>\n<details>', 1)
     page = (SKILL / 'assets/share-shell.html').read_text().replace('__BASKET_FRAGMENT__', html.escape(source))
-    page = page.replace('__BASKET_TITLE__', html.escape('各经济板块股票表现｜'+'·'.join(r['region_name'] for r in reports)+'｜截至'+data['as_of']))
+    page = page.replace('__BASKET_TITLE__', html.escape('各经济板块股票表现｜'+'·'.join(s['name'] for s in sections)+'｜截至'+data['as_of']))
     if '/Users/' in page or re.search(r'<script[^>]*src=', html.unescape(page)):
         raise ValueError('分享页面包含本地路径或外部脚本')
     target = Path(target)
@@ -50,6 +60,7 @@ def export(target):
                    baskets=sum(len(r['series']) for r in reports), stocks=sum(len(g['tickers']) for r in reports for g in r['series']),
                    regions=[dict(id=r['region'],as_of=r['as_of'],baskets=len(r['series']),stocks=sum(len(g['tickers']) for g in r['series']),carried_days=r['carried_days']) for r in reports],
                    carried_days=sum(r['carried_days'] for r in reports), url=config['publication']['url'],
+                   sections=sections,
                    membership_audit=validate_memberships(config))
     (target.parent / 'publication.json').write_text(json.dumps(receipt, ensure_ascii=False, indent=2)+'\n')
     print(json.dumps(receipt, ensure_ascii=False))
