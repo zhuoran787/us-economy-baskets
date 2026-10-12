@@ -1,55 +1,55 @@
 {
-  "as_of": "2026-10-02",
+  "as_of": "2026-10-09",
   "history_start": "2024-03-27",
-  "config_hash": "5e808b9d2006be745ff9bf6b724525437e348be1ecca687f1853ce52a75cb30b",
-  "html_sha256": "1bf881ffda075764ef1c35946ffe406d0b7f4c753adfba8d80367b6919c64eb6",
+  "config_hash": "72c49a7ad716762fbfcdab41da28ca378fa8f7b98ed641119a25613e86bb9a28",
+  "html_sha256": "f9cb22b65939b2307360ba6a8c032906bfb03cf3e2806fdda2b93bd87f650a0a",
   "baskets": 30,
   "stocks": 273,
   "regions": [
     {
       "id": "us",
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-09",
       "baskets": 9,
       "stocks": 89,
       "carried_days": 0
     },
     {
       "id": "europe",
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-09",
       "baskets": 5,
       "stocks": 44,
       "carried_days": 1
     },
     {
       "id": "japan",
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-09",
       "baskets": 5,
       "stocks": 44,
       "carried_days": 0
     },
     {
       "id": "southeast_asia",
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-09",
       "baskets": 5,
       "stocks": 44,
       "carried_days": 0
     },
     {
       "id": "global_economy",
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-09",
       "baskets": 4,
       "stocks": 36,
       "carried_days": 7
     },
     {
       "id": "global_ai",
-      "as_of": "2026-10-02",
+      "as_of": "2026-10-09",
       "baskets": 2,
       "stocks": 16,
-      "carried_days": 1
+      "carried_days": 2
     }
   ],
-  "carried_days": 9,
+  "carried_days": 10,
   "url": "https://zhuoran787.github.io/us-economy-baskets/",
   "sections": [
     {
