@@ -46,7 +46,9 @@ def export(target):
     source = re.sub(r'<script src="https://cdn.jsdelivr.net/npm/d3@7\.9\.0/dist/d3\.min\.js"></script>', lambda _: '<script>'+d3+'</script>', source)
     notes = [g['name']+'：'+str(sum(f['kind']=='carried' for f in g['flags']))+'个交易日沿用前值'
              for g in data['series'] if any(f['kind']=='carried' for f in g['flags'])]
-    notice = config['publication']['schedule']['label']+'自动更新；当前数据截至'+data['as_of']+'。'+'；'.join(notes)
+    schedule = config['publication']['schedule']
+    cadence = schedule['label']+'自动更新' if schedule.get('enabled', True) else '每日自动更新已关闭，仅按用户要求手动更新'
+    notice = cadence+'；当前数据截至'+data['as_of']+'。'+'；'.join(notes)
     source = source.replace('<details>', '<p class="text-small">'+html.escape(notice)+'</p>\n<details>', 1)
     page = (SKILL / 'assets/share-shell.html').read_text().replace('__BASKET_FRAGMENT__', html.escape(source))
     page = page.replace('__BASKET_TITLE__', html.escape('各经济板块股票表现｜'+'·'.join(s['name'] for s in sections)+'｜截至'+data['as_of']))

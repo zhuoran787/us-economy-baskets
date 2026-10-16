@@ -349,7 +349,8 @@
     "schedule": {
       "cron": "30 17 * * 1-5",
       "timezone": "America/New_York",
-      "label": "纽约时间每个工作日17:30（收盘后）"
+      "label": "纽约时间每个工作日17:30（收盘后）",
+      "enabled": false
     },
     "refresh_retry_delays_seconds": [
       60,
