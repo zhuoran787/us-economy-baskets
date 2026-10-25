@@ -437,7 +437,14 @@
       "calendar": "XTKS"
     },
     "XBKK": {
-      "calendar": "XBKK"
+      "calendar": "XBKK",
+      "extra_closed": [
+        "2026-10-16"
+      ],
+      "sources": [
+        "https://www.set.or.th/en/about/event-calendar/holiday?year=2026",
+        "https://thailand.prd.go.th/en/content/category/detail/id/2078/iid/549576"
+      ]
     },
     "XDUB": {
       "calendar": "XDUB"

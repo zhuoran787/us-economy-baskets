@@ -1,49 +1,49 @@
 {
-  "as_of": "2026-10-15",
+  "as_of": "2026-10-23",
   "history_start": "2024-03-27",
-  "config_hash": "6d125a48a344bf02262d6d78170d4b0fcc7fb36bbd0702324c8affd79f305c40",
-  "html_sha256": "95a4ff9b092d59707e877259aa968e71bc0b2ac2053fd192f10621cebb0b6c96",
+  "config_hash": "4c64159c72b12cfade0a9385fe2add690d30039b3eefe97c4ced9121fe91ea22",
+  "html_sha256": "ce914b81ec8f5332d56aa5e0b67943351a0300a5249c92c51538fe018fc6030b",
   "baskets": 30,
   "stocks": 273,
   "regions": [
     {
       "id": "us",
-      "as_of": "2026-10-15",
+      "as_of": "2026-10-23",
       "baskets": 9,
       "stocks": 89,
       "carried_days": 0
     },
     {
       "id": "europe",
-      "as_of": "2026-10-15",
+      "as_of": "2026-10-23",
       "baskets": 5,
       "stocks": 44,
       "carried_days": 1
     },
     {
       "id": "japan",
-      "as_of": "2026-10-15",
+      "as_of": "2026-10-23",
       "baskets": 5,
       "stocks": 44,
       "carried_days": 0
     },
     {
       "id": "southeast_asia",
-      "as_of": "2026-10-15",
+      "as_of": "2026-10-23",
       "baskets": 5,
       "stocks": 44,
       "carried_days": 0
     },
     {
       "id": "global_economy",
-      "as_of": "2026-10-15",
+      "as_of": "2026-10-23",
       "baskets": 4,
       "stocks": 36,
       "carried_days": 7
     },
     {
       "id": "global_ai",
-      "as_of": "2026-10-15",
+      "as_of": "2026-10-23",
       "baskets": 2,
       "stocks": 16,
       "carried_days": 2
